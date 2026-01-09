@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-pickletrack-black via-pickletrack-dark to-pickletrack-black">
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-pickletrack-black via-pickletrack-dark to-pickletrack-black">
         {/* Background effects */}
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute inset-0 bg-gradient-radial from-pickletrack-lime/8 via-transparent to-transparent" />
@@ -104,7 +104,10 @@ export default function Home() {
 
             {/* Court visualization - 3 courts in perspective stack */}
             <div className="relative hidden lg:flex items-start justify-center -mt-42">
-              <div className="relative animate-scale-in w-[500px] h-[520px]">
+              <div className="relative animate-scale-in w-[500px] h-[520px] courts-container">
+                {/* Background for light mode */}
+                <div className="absolute -inset-8 bg-gradient-to-br from-pickletrack-black/90 via-pickletrack-dark/80 to-pickletrack-black/90 rounded-3xl opacity-0 light-mode-bg -z-10" />
+
                 {/* Three courts in cascading stack with perspective */}
 
                 {/* Court 1 - Back (Cyan) */}
@@ -182,7 +185,7 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="servicios"
-        className="relative py-32 bg-gradient-to-b from-pickletrack-dark via-pickletrack-dark to-pickletrack-black/90"
+        className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-dark via-pickletrack-dark to-pickletrack-black/90"
       >
         <div className="absolute inset-0 bg-grid-dense opacity-20" />
         {/* Subtle decorative element */}
@@ -272,7 +275,7 @@ export default function Home() {
       {/* Court Designs Gallery */}
       <section
         id="disenos"
-        className="relative py-32 bg-gradient-to-b from-pickletrack-black via-[#0a0a0a] to-pickletrack-dark overflow-hidden"
+        className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-black via-[#0a0a0a] to-pickletrack-dark overflow-hidden"
       >
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-pickletrack-lime/8 rounded-full blur-[150px]" />
@@ -296,7 +299,7 @@ export default function Home() {
           </div>
 
           {/* Court gallery - 3 design options */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 image: "/courts/court-lime-removebg-preview.png",
@@ -319,16 +322,16 @@ export default function Home() {
             ].map((court) => (
               <div
                 key={court.name}
-                className="group relative aspect-[2/3] bg-pickletrack-dark/30 rounded-lg overflow-hidden p-6 hover:scale-105 transition-transform duration-500"
+                className="group relative aspect-[2/3] court-card-bg rounded-xl overflow-hidden p-6 hover:scale-[1.02] transition-all duration-500 shadow-lg hover:shadow-2xl border border-white/10"
               >
-                <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="absolute inset-0 flex items-center justify-center p-6">
                   <Image
                     src={court.image}
                     alt={`Diseño ${court.name}`}
                     width={200}
                     height={350}
-                    className="w-auto h-full max-h-[90%] object-contain transition-all duration-500 group-hover:scale-105"
-                    style={{ filter: `drop-shadow(0 0 20px ${court.glow})` }}
+                    className="w-auto h-full max-h-[85%] object-contain transition-all duration-500 group-hover:scale-105"
+                    style={{ filter: `drop-shadow(0 0 25px ${court.glow})` }}
                   />
                 </div>
                 <div className="absolute bottom-6 left-6 right-6 z-10">
@@ -383,7 +386,7 @@ export default function Home() {
       </section>
 
       {/* School/Escuela Section */}
-      <section id="escuela" className="relative py-32 bg-pickletrack-dark">
+      <section id="escuela" className="relative py-20 lg:py-24 bg-pickletrack-dark">
         <div className="absolute inset-0 bg-grid opacity-20" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -496,7 +499,7 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section id="partners" className="relative py-32 bg-pickletrack-black">
+      <section id="partners" className="relative py-20 lg:py-24 bg-pickletrack-black">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] mb-4">
@@ -558,7 +561,7 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contacto"
-        className="relative py-32 bg-pickletrack-dark overflow-hidden"
+        className="relative py-20 lg:py-24 bg-pickletrack-dark overflow-hidden"
       >
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-pickletrack-lime/5 to-transparent" />
@@ -722,7 +725,7 @@ export default function Home() {
                 src="/brand/pickletrack.png"
                 alt="PickleTrack"
                 fill
-                className="object-contain object-left"
+                className="object-contain object-left invert-on-light"
               />
             </div>
 

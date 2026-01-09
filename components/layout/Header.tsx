@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -28,7 +29,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-pickletrack-black/90 backdrop-blur-md border-b border-white/10'
+          ? 'bg-pickletrack-black/90 light:bg-white/90 backdrop-blur-md border-b border-white/10 light:border-black/10'
           : 'bg-transparent'
       }`}
     >
@@ -41,7 +42,7 @@ export function Header() {
                 src="/brand/pickletrack.png"
                 alt="PickleTrack"
                 fill
-                className="object-contain object-left"
+                className="object-contain object-left invert-on-light"
                 priority
               />
             </div>
@@ -53,24 +54,27 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative font-body text-sm uppercase tracking-widest text-white/70 hover:text-pickletrack-lime transition-colors duration-300 group"
+                className="relative font-body text-sm uppercase tracking-widest text-white/70 light:text-black/70 hover:text-pickletrack-lime light:hover:text-pickletrack-gold transition-colors duration-300 group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pickletrack-lime transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pickletrack-lime light:bg-pickletrack-gold transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <Link
-            href="#contacto"
-            className="hidden md:block relative px-6 py-2.5 font-display text-sm tracking-wider uppercase bg-pickletrack-lime text-pickletrack-black hover:glow-lime transition-all duration-300 hover:scale-105"
-            style={{
-              clipPath: 'polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px)',
-            }}
-          >
-            Quiero Pistas
-          </Link>
+          {/* Theme Toggle + CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
+            <Link
+              href="#contacto"
+              className="relative px-6 py-2.5 font-display text-sm tracking-wider uppercase bg-pickletrack-lime light:bg-pickletrack-gold text-pickletrack-black hover:glow-lime light:hover:glow-gold transition-all duration-300 hover:scale-105"
+              style={{
+                clipPath: 'polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px)',
+              }}
+            >
+              Quiero Pistas
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -79,17 +83,17 @@ export function Header() {
             aria-label="Menu"
           >
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white light:bg-black transition-all duration-300 ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white light:bg-black transition-all duration-300 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-white light:bg-black transition-all duration-300 ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
               }`}
             />
@@ -99,17 +103,18 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 bg-pickletrack-black/98 backdrop-blur-lg transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 bg-pickletrack-black/98 light:bg-white/98 backdrop-blur-lg transition-all duration-500 ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
+          <ThemeToggle />
           {navLinks.map((link, index) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="font-display text-4xl uppercase tracking-wider text-white hover:text-pickletrack-lime transition-colors"
+              className="font-display text-4xl uppercase tracking-wider text-white light:text-black hover:text-pickletrack-lime light:hover:text-pickletrack-gold transition-colors"
               style={{
                 animationDelay: `${index * 0.1}s`,
               }}
@@ -120,7 +125,7 @@ export function Header() {
           <Link
             href="#contacto"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-8 px-8 py-4 font-display text-xl tracking-wider uppercase bg-pickletrack-lime text-pickletrack-black"
+            className="mt-8 px-8 py-4 font-display text-xl tracking-wider uppercase bg-pickletrack-lime light:bg-pickletrack-gold text-pickletrack-black"
           >
             Quiero Pistas
           </Link>

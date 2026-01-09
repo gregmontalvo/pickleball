@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, DM_Sans } from 'next/font/google'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({
@@ -36,9 +37,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${bebasNeue.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen bg-pickletrack-black">
-        {children}
+    <html lang="es" className={`${bebasNeue.variable} ${dmSans.variable} dark`} suppressHydrationWarning>
+      <body className="min-h-screen bg-pickletrack-black transition-colors duration-500" suppressHydrationWarning>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
