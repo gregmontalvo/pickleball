@@ -8,15 +8,23 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-pickletrack-black">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-pickletrack-black via-pickletrack-dark to-pickletrack-black">
         {/* Background effects */}
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute inset-0 bg-gradient-radial from-pickletrack-lime/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-grid opacity-30" />
+        <div className="absolute inset-0 bg-gradient-radial from-pickletrack-lime/8 via-transparent to-transparent" />
 
-        {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-pickletrack-lime/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-pickletrack-magenta/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pickletrack-cyan/10 rounded-full blur-[150px]" />
+        {/* Decorative background courts - subtle */}
+        <div className="absolute top-20 left-10 w-32 h-56 opacity-[0.03] rotate-12">
+          <Image src="/courts/court-cyan.png" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-20 right-10 w-32 h-56 opacity-[0.03] -rotate-12">
+          <Image src="/courts/court-magenta.png" alt="" fill className="object-contain" />
+        </div>
+
+        {/* Animated gradient orbs - slightly more visible for warmth */}
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-pickletrack-lime/25 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-pickletrack-magenta/25 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pickletrack-cyan/15 rounded-full blur-[150px]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -38,8 +46,8 @@ export default function Home() {
               </div>
 
               <p className="font-body text-lg sm:text-xl text-white/60 max-w-lg animate-slide-up stagger-2">
-                Invertimos en la instalación de pistas de última generación en tu centro.
-                Tú solo gestionas y disfrutas del retorno.
+                Diseñamos y construimos tus pistas de Pickleball y nos encargamos
+                de la gestión y escuelas; tú solo disfrutas del retorno.
               </p>
 
               <div className="flex flex-wrap gap-4 animate-slide-up stagger-3">
@@ -74,17 +82,46 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Court visualization */}
+            {/* Court visualization - 3 courts side by side */}
             <div className="relative flex items-center justify-center lg:justify-end">
-              <div className="relative w-64 sm:w-80 lg:w-96 animate-scale-in">
-                <PickleballCourt variant="gradient" animated />
+              <div className="relative animate-scale-in">
+                {/* Three courts in a row */}
+                <div className="flex gap-2 sm:gap-3">
+                  <div className="w-20 sm:w-24 lg:w-28 transition-transform hover:scale-105">
+                    <Image
+                      src="/courts/court-cyan.png"
+                      alt="Pista Pickleball Cyan"
+                      width={112}
+                      height={200}
+                      className="w-full h-auto drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]"
+                    />
+                  </div>
+                  <div className="w-20 sm:w-24 lg:w-28 transition-transform hover:scale-105">
+                    <Image
+                      src="/courts/court-lime.png"
+                      alt="Pista Pickleball Lima"
+                      width={112}
+                      height={200}
+                      className="w-full h-auto drop-shadow-[0_0_15px_rgba(204,255,0,0.4)]"
+                    />
+                  </div>
+                  <div className="w-20 sm:w-24 lg:w-28 transition-transform hover:scale-105">
+                    <Image
+                      src="/courts/court-magenta.png"
+                      alt="Pista Pickleball Magenta"
+                      width={112}
+                      height={200}
+                      className="w-full h-auto drop-shadow-[0_0_15px_rgba(255,0,255,0.4)]"
+                    />
+                  </div>
+                </div>
 
                 {/* Floating badges */}
                 <div className="absolute -top-4 -right-4 px-4 py-2 bg-pickletrack-gold text-pickletrack-black font-display text-sm uppercase tracking-wider animate-float">
                   Sin Coste
                 </div>
                 <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider animate-float" style={{ animationDelay: '0.5s' }}>
-                  Llaves en Mano
+                  Llave en Mano
                 </div>
               </div>
             </div>
@@ -99,8 +136,12 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="servicios" className="relative py-32 bg-pickletrack-dark">
-        <div className="absolute inset-0 bg-grid-dense opacity-30" />
+      <section id="servicios" className="relative py-32 bg-gradient-to-b from-pickletrack-dark via-pickletrack-dark to-pickletrack-black/90">
+        <div className="absolute inset-0 bg-grid-dense opacity-20" />
+        {/* Subtle decorative element */}
+        <div className="absolute top-1/2 right-0 w-48 h-80 opacity-[0.02] translate-x-1/2">
+          <Image src="/courts/court-lime.png" alt="" fill className="object-contain" />
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -167,43 +208,52 @@ export default function Home() {
       </section>
 
       {/* Court Designs Gallery */}
-      <section id="disenos" className="relative py-32 bg-pickletrack-black overflow-hidden">
+      <section id="disenos" className="relative py-32 bg-gradient-to-b from-pickletrack-black via-[#0a0a0a] to-pickletrack-dark overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-pickletrack-lime/5 rounded-full blur-[150px]" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-pickletrack-magenta/5 rounded-full blur-[150px]" />
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-pickletrack-lime/8 rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-pickletrack-magenta/8 rounded-full blur-[150px]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
             <div>
               <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] mb-4">
-                Playincolors
+                Personalización
               </p>
               <h2 className="section-heading text-pickletrack-white">
                 Diseños <span className="gradient-text">Únicos</span>
               </h2>
             </div>
             <p className="font-body text-lg text-white/50 max-w-md mt-6 lg:mt-0">
-              Víctor García, creador de PLAYINCOLORS, diseña instalaciones que transforman
-              cualquier espacio en una obra de arte deportiva.
+              Diseñamos y construimos pistas únicas que transforman los espacios
+              y logran transmitir la esencia del deporte.
             </p>
           </div>
 
-          {/* Court gallery - 3 animated courts */}
+          {/* Court gallery - 3 design options */}
           <div className="grid md:grid-cols-3 gap-8">
-            {['lime', 'magenta', 'cyan'].map((color, index) => (
+            {[
+              { image: '/courts/court-lime.png', name: 'Neón', color: 'lime', glow: 'rgba(204,255,0,0.4)' },
+              { image: '/courts/court-magenta.png', name: 'Vibrante', color: 'magenta', glow: 'rgba(255,0,255,0.4)' },
+              { image: '/courts/court-tropical.png', name: 'Tropical', color: 'cyan', glow: 'rgba(0,255,255,0.4)' },
+            ].map((court) => (
               <div
-                key={color}
-                className="group relative aspect-[2/3] bg-pickletrack-dark/50 rounded-lg overflow-hidden court-border p-6 hover:scale-105 transition-transform duration-500"
+                key={court.name}
+                className="group relative aspect-[2/3] bg-pickletrack-dark/30 rounded-lg overflow-hidden p-6 hover:scale-105 transition-transform duration-500"
               >
-                <PickleballCourt
-                  variant={color as 'lime' | 'magenta' | 'cyan'}
-                  animated
-                  className="w-full h-full"
-                />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className={`font-display text-xl uppercase tracking-wider text-pickletrack-${color}`}>
-                    Diseño {['Neón', 'Vibrante', 'Eléctrico'][index]}
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <Image
+                    src={court.image}
+                    alt={`Diseño ${court.name}`}
+                    width={200}
+                    height={350}
+                    className="w-auto h-full max-h-[90%] object-contain transition-all duration-500 group-hover:scale-105"
+                    style={{ filter: `drop-shadow(0 0 20px ${court.glow})` }}
+                  />
+                </div>
+                <div className="absolute bottom-6 left-6 right-6 z-10">
+                  <p className={`font-display text-xl uppercase tracking-wider text-pickletrack-${court.color}`}>
+                    Diseño {court.name}
                   </p>
                 </div>
               </div>
@@ -263,15 +313,24 @@ export default function Home() {
                   Sistema de Insignias Badgie
                 </p>
                 <div className="flex gap-4">
-                  {['Golpes Básicos', 'Smash King', 'Ace Master'].map((badge, i) => (
+                  {[
+                    { name: 'Golpes Básicos', icon: '/brand/badges/badge-ball.png', color: 'lime' },
+                    { name: 'Jugador Social', icon: '/brand/badges/badge-chat.png', color: 'cyan' },
+                    { name: 'Pro Player', icon: '/brand/badges/badge-court.png', color: 'magenta' },
+                  ].map((badge) => (
                     <div
-                      key={badge}
-                      className="flex-1 p-3 bg-gradient-to-br from-pickletrack-gold/20 to-pickletrack-orange/10 border border-pickletrack-gold/30 rounded text-center"
+                      key={badge.name}
+                      className={`flex-1 p-3 bg-gradient-to-br from-pickletrack-${badge.color}/20 to-transparent border border-pickletrack-${badge.color}/30 rounded text-center`}
                     >
-                      <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-pickletrack-gold/20 flex items-center justify-center">
-                        <span className="text-pickletrack-gold text-xl">★</span>
+                      <div className="w-12 h-12 mx-auto mb-2 relative">
+                        <Image
+                          src={badge.icon}
+                          alt={badge.name}
+                          fill
+                          className="object-contain invert"
+                        />
                       </div>
-                      <p className="font-body text-xs text-white/70">{badge}</p>
+                      <p className="font-body text-xs text-white/70">{badge.name}</p>
                     </div>
                   ))}
                 </div>
@@ -279,19 +338,18 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              {/* Placeholder for school image/illustration */}
-              <div className="aspect-square bg-gradient-to-br from-pickletrack-dark to-pickletrack-black border border-white/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 relative">
-                    <Image
-                      src="/brand/icon.png"
-                      alt="PickleTrack"
-                      fill
-                      className="object-contain opacity-50"
-                    />
-                  </div>
-                  <p className="font-display text-2xl uppercase tracking-wider text-white/30">
-                    Formando Campeones
+              {/* Group photo with Wilson/Tennis Point */}
+              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden border border-white/10">
+                <Image
+                  src="/gallery/wilson-tennis-point-group.jpg"
+                  alt="Equipo PickleTrack con Wilson y Tennis Point"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-pickletrack-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="font-display text-xl uppercase tracking-wider text-white">
+                    Nuestro Equipo
                   </p>
                 </div>
               </div>
