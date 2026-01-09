@@ -1,0 +1,285 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Bebas Neue', 'Impact', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* PickleTrack brand colors */
+  --color-pickletrack-black: #0A0A0A;
+  --color-pickletrack-dark: #111111;
+  --color-pickletrack-white: #FAFAFA;
+  --color-pickletrack-gold: #E5A835;
+  --color-pickletrack-lime: #CCFF00;
+  --color-pickletrack-magenta: #FF00FF;
+  --color-pickletrack-cyan: #00FFFF;
+  --color-pickletrack-purple: #9333EA;
+  --color-pickletrack-green: #00FF7F;
+  --color-pickletrack-orange: #FF6B00;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-pickletrack-black);
+  color: var(--color-pickletrack-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-pickletrack-lime);
+  color: var(--color-pickletrack-black);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-pickletrack-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(204, 255, 0, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(204, 255, 0, 0.5);
+}
+
+/* Custom utility classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Neon glow effects */
+.glow-lime {
+  box-shadow:
+    0 0 10px var(--color-pickletrack-lime),
+    0 0 20px var(--color-pickletrack-lime),
+    0 0 40px rgba(204, 255, 0, 0.3);
+}
+
+.glow-magenta {
+  box-shadow:
+    0 0 10px var(--color-pickletrack-magenta),
+    0 0 20px var(--color-pickletrack-magenta),
+    0 0 40px rgba(255, 0, 255, 0.3);
+}
+
+.glow-cyan {
+  box-shadow:
+    0 0 10px var(--color-pickletrack-cyan),
+    0 0 20px var(--color-pickletrack-cyan),
+    0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+.glow-gold {
+  box-shadow:
+    0 0 10px var(--color-pickletrack-gold),
+    0 0 20px var(--color-pickletrack-gold),
+    0 0 40px rgba(229, 168, 53, 0.3);
+}
+
+.text-glow-lime {
+  text-shadow:
+    0 0 10px var(--color-pickletrack-lime),
+    0 0 20px var(--color-pickletrack-lime),
+    0 0 40px rgba(204, 255, 0, 0.5);
+}
+
+/* Gradient text */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-pickletrack-lime) 0%,
+    var(--color-pickletrack-cyan) 50%,
+    var(--color-pickletrack-magenta) 100%
+  );
+}
+
+.gradient-text-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-pickletrack-gold) 0%,
+    #FFD700 50%,
+    var(--color-pickletrack-orange) 100%
+  );
+}
+
+/* Grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(204, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(204, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-grid-dense {
+  background-image:
+    linear-gradient(rgba(204, 255, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(204, 255, 0, 0.05) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+/* Court gradient borders */
+.court-border {
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-pickletrack-dark), var(--color-pickletrack-dark)) padding-box,
+    linear-gradient(135deg, var(--color-pickletrack-lime), var(--color-pickletrack-cyan), var(--color-pickletrack-magenta)) border-box;
+}
+
+/* Animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Button styles */
+.btn-primary {
+  position: relative;
+  padding: 1rem 2rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: var(--color-pickletrack-lime);
+  color: var(--color-pickletrack-black);
+  transition: all 0.3s ease-out;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 0 10px var(--color-pickletrack-lime),
+    0 0 20px var(--color-pickletrack-lime),
+    0 0 40px rgba(204, 255, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-secondary {
+  position: relative;
+  padding: 1rem 2rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--color-pickletrack-white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-out;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-pickletrack-lime);
+  color: var(--color-pickletrack-lime);
+}
+
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* Section heading */
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 6rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+/* Card styles */
+.card-neon {
+  position: relative;
+  padding: 1.5rem;
+  background-color: rgba(17, 17, 17, 0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease-out;
+}
+
+.card-neon:hover {
+  border-color: rgba(204, 255, 0, 0.5);
+  background-color: rgba(17, 17, 17, 0.7);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Custom colors for Tailwind-like usage */
+.bg-pickletrack-black { background-color: var(--color-pickletrack-black); }
+.bg-pickletrack-dark { background-color: var(--color-pickletrack-dark); }
+.bg-pickletrack-lime { background-color: var(--color-pickletrack-lime); }
+.bg-pickletrack-gold { background-color: var(--color-pickletrack-gold); }
+.bg-pickletrack-magenta { background-color: var(--color-pickletrack-magenta); }
+.bg-pickletrack-cyan { background-color: var(--color-pickletrack-cyan); }
+
+.text-pickletrack-black { color: var(--color-pickletrack-black); }
+.text-pickletrack-white { color: var(--color-pickletrack-white); }
+.text-pickletrack-lime { color: var(--color-pickletrack-lime); }
+.text-pickletrack-gold { color: var(--color-pickletrack-gold); }
+.text-pickletrack-magenta { color: var(--color-pickletrack-magenta); }
+.text-pickletrack-cyan { color: var(--color-pickletrack-cyan); }
+
+.border-pickletrack-lime { border-color: var(--color-pickletrack-lime); }
+.border-pickletrack-gold { border-color: var(--color-pickletrack-gold); }

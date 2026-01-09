@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta PickleTrack - Badgie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --gold: #E5A835;
+            --lime: #CCFF00;
+            --magenta: #FF00FF;
+            --cyan: #00FFFF;
+            --purple: #9333EA;
+            --gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Slide 1 - Portada */
+        .slide-1 {
+            background: linear-gradient(135deg, var(--black) 0%, #111 100%);
+        }
+
+        .slide-1::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 150%;
+            background: conic-gradient(from 180deg, var(--lime), var(--cyan), var(--magenta), var(--purple), var(--lime));
+            opacity: 0.1;
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            z-index: 1;
+        }
+
+        .logo-badgie {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .logo-badgie span {
+            color: var(--white);
+        }
+
+        .plus {
+            font-size: 3rem;
+            color: var(--lime);
+            font-weight: 300;
+        }
+
+        .logo-pickletrack {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pickle-icon {
+            width: 60px;
+            height: 35px;
+            background: var(--white);
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+        }
+
+        .pickle-icon::before {
+            content: '';
+            width: 22px;
+            height: 22px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pickle-icon::after {
+            content: '......';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            font-size: 8px;
+            letter-spacing: -1px;
+            color: var(--black);
+        }
+
+        .logo-pickletrack-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            z-index: 1;
+            background: linear-gradient(90deg, var(--white), var(--lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            z-index: 1;
+        }
+
+        .date {
+            position: absolute;
+            bottom: 40px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Slide 2 - Entendemos */
+        .slide-2 {
+            background: var(--black);
+        }
+
+        .slide-2::before {
+            content: '';
+            position: absolute;
+            left: -20%;
+            top: 20%;
+            width: 500px;
+            height: 500px;
+            background: var(--lime);
+            opacity: 0.05;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .section-tag {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--lime);
+        }
+
+        .highlight-gold {
+            color: var(--gold);
+        }
+
+        .highlight-cyan {
+            color: var(--cyan);
+        }
+
+        .highlight-magenta {
+            color: var(--magenta);
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            z-index: 1;
+        }
+
+        .vision-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+        }
+
+        .vision-card:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-5px);
+            border-color: var(--lime);
+        }
+
+        .vision-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--lime);
+        }
+
+        .vision-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Slide 3 - Propuesta */
+        .slide-3 {
+            background: linear-gradient(180deg, var(--black) 0%, #0a0a0a 100%);
+        }
+
+        .proposal-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            z-index: 1;
+        }
+
+        .proposal-card {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proposal-card.main {
+            border-color: var(--lime);
+            box-shadow: 0 0 60px rgba(204, 255, 0, 0.1);
+        }
+
+        .proposal-card.main::before {
+            content: 'CORE';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--lime);
+            color: var(--black);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .proposal-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .proposal-card ul {
+            list-style: none;
+        }
+
+        .proposal-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .proposal-card li::before {
+            content: '→';
+            color: var(--lime);
+            font-weight: bold;
+        }
+
+        .price-tag {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .price-tag .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--lime);
+        }
+
+        .price-tag .period {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Slide 4 - Web Detail */
+        .slide-4 {
+            background: var(--black);
+        }
+
+        .web-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            z-index: 1;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: var(--cyan);
+            background: rgba(0,255,255,0.02);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
+        /* Slide 5 - Badgie */
+        .slide-5 {
+            background: linear-gradient(135deg, #0a0a0a 0%, var(--black) 100%);
+        }
+
+        .slide-5::before {
+            content: '';
+            position: absolute;
+            right: -10%;
+            bottom: -20%;
+            width: 600px;
+            height: 600px;
+            background: var(--gold);
+            opacity: 0.05;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .badgie-content {
+            display: flex;
+            gap: 60px;
+            max-width: 1200px;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .badgie-info {
+            flex: 1;
+        }
+
+        .badgie-info h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .badgie-info .tagline {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .badgie-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .badgie-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(229,168,53,0.05);
+            border-radius: 12px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .badgie-feature span {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .badgie-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+            border-radius: 40px;
+            border: 3px solid #333;
+            padding: 15px;
+            position: relative;
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 25px;
+            background: #000;
+            border-radius: 15px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold) 0%, #c4891f 100%);
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .phone-screen .app-logo {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--black);
+        }
+
+        .phone-screen .app-text {
+            color: var(--black);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Slide 6 - Opcionales */
+        .slide-6 {
+            background: var(--black);
+        }
+
+        .optional-grid {
+            display: flex;
+            gap: 30px;
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        .optional-card {
+            flex: 1;
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .optional-card:hover {
+            border-style: solid;
+            border-color: var(--magenta);
+        }
+
+        .optional-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .optional-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .optional-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--magenta);
+        }
+
+        .optional-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Slide 7 - Resumen Precios */
+        .slide-7 {
+            background: linear-gradient(180deg, #050505 0%, var(--black) 100%);
+        }
+
+        .pricing-table {
+            max-width: 800px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-row:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .pricing-row.total {
+            border-bottom: none;
+            background: linear-gradient(90deg, rgba(204,255,0,0.1) 0%, rgba(204,255,0,0.02) 100%);
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .pricing-row .label {
+            font-size: 1.2rem;
+        }
+
+        .pricing-row .label small {
+            display: block;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        .pricing-row .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .pricing-row.total .value {
+            color: var(--lime);
+            font-size: 2rem;
+        }
+
+        .pricing-note {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .pricing-note p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Slide 8 - Timeline */
+        .slide-8 {
+            background: var(--black);
+        }
+
+        .timeline {
+            display: flex;
+            gap: 0;
+            max-width: 1100px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--lime), var(--cyan), var(--magenta), var(--purple));
+        }
+
+        .timeline-step {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .timeline-number {
+            width: 80px;
+            height: 80px;
+            background: var(--black);
+            border: 2px solid var(--lime);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--lime);
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-step:nth-child(2) .timeline-number {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .timeline-step:nth-child(3) .timeline-number {
+            border-color: var(--magenta);
+            color: var(--magenta);
+        }
+
+        .timeline-step:nth-child(4) .timeline-number {
+            border-color: var(--purple);
+            color: var(--purple);
+        }
+
+        .timeline-step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-step p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
+        /* Slide 9 - Cierre */
+        .slide-9 {
+            background: linear-gradient(135deg, var(--black) 0%, #0a0a0a 100%);
+            text-align: center;
+        }
+
+        .slide-9::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: conic-gradient(from 0deg, var(--lime), var(--cyan), var(--magenta), var(--purple), var(--lime));
+            opacity: 0.08;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .closing-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+
+        .closing-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 50px;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 40px;
+            z-index: 1;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px 40px;
+        }
+
+        .contact-item .label {
+            font-size: 0.8rem;
+            color: var(--lime);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .contact-item .value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .nav-dot.active {
+            background: var(--lime);
+            transform: scale(1.3);
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--lime), var(--cyan), var(--magenta));
+            z-index: 100;
+            transition: width 0.3s ease;
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+            z-index: 100;
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 40px 30px;
+            }
+
+            .main-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .vision-grid,
+            .web-features {
+                grid-template-columns: 1fr;
+            }
+
+            .proposal-container,
+            .badgie-content {
+                flex-direction: column;
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+            .nav-dots, .keyboard-hint, .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav class="nav-dots">
+        <div class="nav-dot active" data-slide="1"></div>
+        <div class="nav-dot" data-slide="2"></div>
+        <div class="nav-dot" data-slide="3"></div>
+        <div class="nav-dot" data-slide="4"></div>
+        <div class="nav-dot" data-slide="5"></div>
+        <div class="nav-dot" data-slide="6"></div>
+        <div class="nav-dot" data-slide="7"></div>
+        <div class="nav-dot" data-slide="8"></div>
+        <div class="nav-dot" data-slide="9"></div>
+    </nav>
+
+    <div class="keyboard-hint">
+        <kbd>↑</kbd> <kbd>↓</kbd> o <kbd>scroll</kbd> para navegar
+    </div>
+
+    <!-- Slide 1: Portada -->
+    <section class="slide slide-1" id="slide-1">
+        <div class="logo-container">
+            <div class="logo-badgie"><span>bad</span>gie</div>
+            <div class="plus">+</div>
+            <div class="logo-pickletrack">
+                <div class="pickle-icon"></div>
+                <span class="logo-pickletrack-text">PICKLETRACK</span>
+            </div>
+        </div>
+        <h1 class="main-title">Propuesta de Colaboracion</h1>
+        <p class="subtitle">Web + Gestion de Escuelas Deportivas</p>
+        <span class="date">Diciembre 2025</span>
+    </section>
+
+    <!-- Slide 2: Entendemos tu vision -->
+    <section class="slide slide-2" id="slide-2">
+        <span class="section-tag">Tu Proyecto</span>
+        <h2 class="section-title">Entendemos tu <span class="highlight">vision</span></h2>
+        <div class="vision-grid">
+            <div class="vision-card">
+                <h3>El Concepto</h3>
+                <p>Disenar, construir e invertir en instalaciones de Pickleball en colegios, clubes y hoteles. Pistas de ultima generacion con disenos unicos.</p>
+            </div>
+            <div class="vision-card">
+                <h3>El Primer Paso</h3>
+                <p>Colegio St. Chaumond en Madrid. 3 pistas nuevas en Calle Comandante Franco. Lanzamiento Marzo 2026 con escuela de Pickleball y MiniTenis.</p>
+            </div>
+            <div class="vision-card">
+                <h3>La Escalabilidad</h3>
+                <p>Replicar el modelo en multiples venues. Cada instalacion unica, misma excelencia operativa. pickletrack.es como hub central.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Nuestra Propuesta -->
+    <section class="slide slide-3" id="slide-3">
+        <span class="section-tag">Solucion</span>
+        <h2 class="section-title">Nuestra <span class="highlight-cyan">propuesta</span></h2>
+        <div class="proposal-container">
+            <div class="proposal-card main">
+                <h3>Web <span class="highlight">pickletrack.es</span></h3>
+                <ul>
+                    <li>Homepage B2B para captar instituciones</li>
+                    <li>Sistema de reservas integrado</li>
+                    <li>Landings dinamicos por venue</li>
+                    <li>Formulario de contacto B2B</li>
+                    <li>Diseno con tu identidad visual</li>
+                    <li>Responsive y optimizado SEO</li>
+                    <li>Revisiones ilimitadas hasta OK</li>
+                </ul>
+                <div class="price-tag">
+                    <span class="amount">995€</span>
+                    <span class="period">pago unico</span>
+                </div>
+            </div>
+            <div class="proposal-card">
+                <h3>Gestion con <span class="highlight-gold">Badgie</span></h3>
+                <ul>
+                    <li>Inscripciones online</li>
+                    <li>Gestion de matriculas</li>
+                    <li>Comunicaciones automaticas</li>
+                    <li>Sistema de insignias</li>
+                    <li>Control de pagos</li>
+                    <li>App para familias</li>
+                    <li>Reportes y metricas</li>
+                </ul>
+                <div class="price-tag">
+                    <span class="amount">79€</span>
+                    <span class="period">/mes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Detalle Web -->
+    <section class="slide slide-4" id="slide-4">
+        <span class="section-tag">Desarrollo Web</span>
+        <h2 class="section-title">pickletrack<span class="highlight-cyan">.es</span></h2>
+        <div class="web-features">
+            <div class="feature-item">
+                <div class="feature-icon">🏠</div>
+                <div class="feature-content">
+                    <h4>Homepage B2B</h4>
+                    <p>Pagina principal comercial para atraer colegios, clubes, hoteles. Explicacion del modelo, beneficios, partners.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📍</div>
+                <div class="feature-content">
+                    <h4>Landings por Venue</h4>
+                    <p>/stchaumond, /clubX... Cada centro con su pagina: horarios, precios, inscripcion, info del espacio.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📅</div>
+                <div class="feature-content">
+                    <h4>Sistema de Reservas</h4>
+                    <p>Disponibilidad en tiempo real, reserva de pistas, gestion de horarios. Integrado con calendario.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📝</div>
+                <div class="feature-content">
+                    <h4>Formulario B2B</h4>
+                    <p>Captacion de instituciones interesadas. CRM basico para seguimiento de leads.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-content">
+                    <h4>Diseno PickleTrack</h4>
+                    <p>Colores vibrantes, estetica unica. Lime, magenta, cyan sobre negro. Tu marca al 100%.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <div class="feature-content">
+                    <h4>100% Responsive</h4>
+                    <p>Perfecto en movil, tablet y desktop. Velocidad optimizada, SEO listo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Badgie -->
+    <section class="slide slide-5" id="slide-5">
+        <div class="badgie-content">
+            <div class="badgie-info">
+                <span class="section-tag">Partner Tecnologico</span>
+                <h2>badgie</h2>
+                <p class="tagline">Gestion de escuelas deportivas</p>
+                <div class="badgie-features">
+                    <div class="badgie-feature">
+                        <span>✓ Inscripciones y matriculas 100% online</span>
+                    </div>
+                    <div class="badgie-feature">
+                        <span>✓ Comunicaciones automaticas a familias</span>
+                    </div>
+                    <div class="badgie-feature">
+                        <span>✓ Sistema de insignias y gamificacion</span>
+                    </div>
+                    <div class="badgie-feature">
+                        <span>✓ Control de asistencia y pagos</span>
+                    </div>
+                    <div class="badgie-feature">
+                        <span>✓ App movil para padres y alumnos</span>
+                    </div>
+                    <div class="badgie-feature">
+                        <span>✓ Dashboard con metricas en tiempo real</span>
+                    </div>
+                </div>
+            </div>
+            <div class="badgie-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <span class="app-logo">★</span>
+                        <span class="app-text">badgie app</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Opcionales -->
+    <section class="slide slide-6" id="slide-6">
+        <span class="section-tag">Add-ons</span>
+        <h2 class="section-title">Opciones <span class="highlight-magenta">adicionales</span></h2>
+        <div class="optional-grid">
+            <div class="optional-card">
+                <h3>Blog / Noticias</h3>
+                <p>Seccion de blog integrada en la web. Publica noticias, eventos, resultados de torneos. CMS facil de usar.</p>
+                <div class="optional-price">+10€<span>/mes</span></div>
+            </div>
+            <div class="optional-card">
+                <h3>Mantenimiento Web</h3>
+                <p>Actualizaciones, backups, soporte tecnico, pequenos cambios mensuales. Tranquilidad total.</p>
+                <div class="optional-price">Consultar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Resumen Precios -->
+    <section class="slide slide-7" id="slide-7">
+        <span class="section-tag">Inversion</span>
+        <h2 class="section-title">Resumen de <span class="highlight">precios</span></h2>
+        <div class="pricing-table">
+            <div class="pricing-row">
+                <div class="label">
+                    Desarrollo Web pickletrack.es
+                    <small>Pago unico · Revisiones ilimitadas hasta aprobacion</small>
+                </div>
+                <div class="value">995€</div>
+            </div>
+            <div class="pricing-row">
+                <div class="label">
+                    Badgie - Gestion de Escuelas
+                    <small>Mensual · Sin permanencia</small>
+                </div>
+                <div class="value">79€/mes</div>
+            </div>
+            <div class="pricing-row">
+                <div class="label">
+                    Blog / Noticias (opcional)
+                    <small>Mensual · Activable en cualquier momento</small>
+                </div>
+                <div class="value">+10€/mes</div>
+            </div>
+            <div class="pricing-row total">
+                <div class="label">Para empezar</div>
+                <div class="value">995€ + 79€/mes</div>
+            </div>
+        </div>
+        <div class="pricing-note">
+            <p><strong>Nota:</strong> El dominio pickletrack.es y hosting estan incluidos el primer ano. Renovacion anual aproximada: 50€/ano.</p>
+        </div>
+    </section>
+
+    <!-- Slide 8: Proximos Pasos -->
+    <section class="slide slide-8" id="slide-8">
+        <span class="section-tag">Roadmap</span>
+        <h2 class="section-title">Proximos <span class="highlight-purple">pasos</span></h2>
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="timeline-number">1</div>
+                <h4>Confirmacion</h4>
+                <p>Aceptacion de propuesta y primer pago (50%)</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-number">2</div>
+                <h4>Diseno</h4>
+                <p>Maquetas y contenido. Revisiones hasta OK.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-number">3</div>
+                <h4>Desarrollo</h4>
+                <p>Construccion de la web y configuracion Badgie</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-number">4</div>
+                <h4>Lanzamiento</h4>
+                <p>Go live + formacion + soporte inicial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Cierre -->
+    <section class="slide slide-9" id="slide-9">
+        <h2 class="closing-title">¿Empezamos?</h2>
+        <p class="closing-subtitle">Estamos listos para hacer de PickleTrack un exito</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="label">Email</div>
+                <div class="value">hola@badgie.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="label">Web</div>
+                <div class="value">badgie.com</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation
+        const dots = document.querySelectorAll('.nav-dot');
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+
+        // Update progress and active dot on scroll
+        function updateNavigation() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+
+            slides.forEach((slide, index) => {
+                const rect = slide.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateNavigation);
+
+        // Click on dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideNum = dot.getAttribute('data-slide');
+                document.getElementById('slide-' + slideNum).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const currentSlide = Array.from(slides).findIndex(slide => {
+                const rect = slide.getBoundingClientRect();
+                return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+            });
+
+            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                if (currentSlide < slides.length - 1) {
+                    slides[currentSlide + 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                if (currentSlide > 0) {
+                    slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Initial update
+        updateNavigation();
+    </script>
+</body>
+</html>
