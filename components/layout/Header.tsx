@@ -18,7 +18,7 @@ export function Header() {
 
   const navLinks = [
     { href: '#servicios', label: 'Servicios' },
-    { href: '#disenos', label: 'Disenos' },
+    { href: '#disenos', label: 'Diseños' },
     { href: '#escuela', label: 'Escuela' },
     { href: '#partners', label: 'Partners' },
     { href: '#contacto', label: 'Contacto' },

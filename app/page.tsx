@@ -24,7 +24,7 @@ export default function Home() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] animate-fade-in">
-                  Diseno - Construccion - Gestion
+                  Diseño - Construcción - Gestión
                 </p>
                 <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] uppercase animate-slide-up">
                   <span className="text-pickletrack-white">Pistas de</span>
@@ -38,8 +38,8 @@ export default function Home() {
               </div>
 
               <p className="font-body text-lg sm:text-xl text-white/60 max-w-lg animate-slide-up stagger-2">
-                Invertimos en la instalacion de pistas de ultima generacion en tu centro.
-                Tu solo gestionas y disfrutas del retorno.
+                Invertimos en la instalación de pistas de última generación en tu centro.
+                Tú solo gestionas y disfrutas del retorno.
               </p>
 
               <div className="flex flex-wrap gap-4 animate-slide-up stagger-3">
@@ -47,13 +47,13 @@ export default function Home() {
                   href="#contacto"
                   className="btn-primary"
                 >
-                  Quiero Saber Mas
+                  Quiero Saber Más
                 </a>
                 <a
                   href="#servicios"
                   className="btn-secondary"
                 >
-                  Como Funciona
+                  Cómo Funciona
                 </a>
               </div>
 
@@ -61,7 +61,7 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 animate-slide-up stagger-4">
                 <div>
                   <p className="font-display text-4xl sm:text-5xl text-pickletrack-lime">+30</p>
-                  <p className="font-body text-sm text-white/50 uppercase tracking-wider">Anos experiencia</p>
+                  <p className="font-body text-sm text-white/50 uppercase tracking-wider">Años experiencia</p>
                 </div>
                 <div>
                   <p className="font-display text-4xl sm:text-5xl text-pickletrack-cyan">+40</p>
@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-display text-4xl sm:text-5xl text-pickletrack-magenta">0</p>
-                  <p className="font-body text-sm text-white/50 uppercase tracking-wider">Inversion tuya</p>
+                  <p className="font-body text-sm text-white/50 uppercase tracking-wider">Inversión tuya</p>
                 </div>
               </div>
             </div>
@@ -122,20 +122,20 @@ export default function Home() {
               },
               {
                 step: '02',
-                title: 'Diseno',
-                description: 'Nuestro equipo ofrece las opciones mas novedosas: instalaciones permanentes o temporales, resinas, cubiertas, iluminacion LED.',
+                title: 'Diseño',
+                description: 'Nuestro equipo ofrece las opciones más novedosas: instalaciones permanentes o temporales, resinas, cubiertas, iluminación LED.',
                 color: 'cyan',
               },
               {
                 step: '03',
-                title: 'Inversion',
-                description: 'PickleTrack corre con TODOS los gastos de instalacion y obra. Desde el diseno hasta la cubierta e iluminacion.',
+                title: 'Inversión',
+                description: 'PickleTrack corre con TODOS los gastos de instalación y obra. Desde el diseño hasta la cubierta e iluminación.',
                 color: 'magenta',
               },
               {
                 step: '04',
-                title: 'Gestion',
-                description: 'Desde el dia uno, nos encargamos de escuelas, alquileres, torneos y equipos. Con herramientas digitales de vanguardia.',
+                title: 'Gestión',
+                description: 'Desde el día uno, nos encargamos de escuelas, alquileres, torneos y equipos. Con herramientas digitales de vanguardia.',
                 color: 'gold',
               },
             ].map((service, index) => (
@@ -180,11 +180,11 @@ export default function Home() {
                 Playincolors
               </p>
               <h2 className="section-heading text-pickletrack-white">
-                Disenos <span className="gradient-text">Unicos</span>
+                Diseños <span className="gradient-text">Únicos</span>
               </h2>
             </div>
             <p className="font-body text-lg text-white/50 max-w-md mt-6 lg:mt-0">
-              Victor Garcia, creador de PLAYINCOLORS, disena instalaciones que transforman
+              Víctor García, creador de PLAYINCOLORS, diseña instalaciones que transforman
               cualquier espacio en una obra de arte deportiva.
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function Home() {
                 />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className={`font-display text-xl uppercase tracking-wider text-pickletrack-${color}`}>
-                    Diseno {['Neon', 'Vibrante', 'Electrico'][index]}
+                    Diseño {['Neón', 'Vibrante', 'Eléctrico'][index]}
                   </p>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
             {[
               'Resinas de alta calidad',
-              'Iluminacion LED integrada',
+              'Iluminación LED integrada',
               'Colores personalizables',
               'Mantenimiento incluido',
             ].map((feature, index) => (
@@ -238,22 +238,22 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="font-body text-pickletrack-gold text-sm uppercase tracking-[0.3em] mb-4">
-                +30 Anos de Experiencia
+                +30 Años de Experiencia
               </p>
               <h2 className="section-heading text-pickletrack-white mb-8">
                 Escuelas de <span className="gradient-text-gold">Elite</span>
               </h2>
               <div className="space-y-6 text-white/60 font-body text-lg leading-relaxed">
                 <p>
-                  Con mas de 30 anos gestionando las escuelas de Tenis y Padel en el
+                  Con más de 30 años gestionando las escuelas de Tenis y Pádel en el
                   <strong className="text-pickletrack-gold"> Club de Campo Villa de Madrid</strong>,
-                  nuestro equipo de mas de 40 profesionales esta preparado para
+                  nuestro equipo de más de 40 profesionales está preparado para
                   brindar programas de entrenamiento de alta calidad.
                 </p>
                 <p>
-                  Las pistas de pickleball son ideales tambien para la
-                  <strong className="text-pickletrack-lime"> iniciacion al tenis con bola roja </strong>
-                  para ninos de 4 a 7 anos.
+                  Las pistas de pickleball son ideales también para la
+                  <strong className="text-pickletrack-lime"> iniciación al tenis con bola roja </strong>
+                  para niños de 4 a 7 años.
                 </p>
               </div>
 
@@ -263,7 +263,7 @@ export default function Home() {
                   Sistema de Insignias Badgie
                 </p>
                 <div className="flex gap-4">
-                  {['Golpes Basicos', 'Smash King', 'Ace Master'].map((badge, i) => (
+                  {['Golpes Básicos', 'Smash King', 'Ace Master'].map((badge, i) => (
                     <div
                       key={badge}
                       className="flex-1 p-3 bg-gradient-to-br from-pickletrack-gold/20 to-pickletrack-orange/10 border border-pickletrack-gold/30 rounded text-center"
@@ -326,7 +326,7 @@ export default function Home() {
             {[
               { name: 'Wilson', desc: 'Equipamiento oficial' },
               { name: 'Tennis Point', desc: 'Retail deportivo' },
-              { name: 'Badgie', desc: 'Gestion digital' },
+              { name: 'Badgie', desc: 'Gestión digital' },
               { name: 'RPPk', desc: 'Registro Profesional' },
             ].map((partner, index) => (
               <div
@@ -363,8 +363,8 @@ export default function Home() {
                 Quieres <span className="gradient-text">Pistas</span>?
               </h2>
               <p className="font-body text-xl text-white/60 mb-8 max-w-lg">
-                Si representas a un colegio, club, hotel o asociacion y quieres
-                instalar pistas de pickleball sin inversion, hablemos.
+                Si representas a un colegio, club, hotel o asociación y quieres
+                instalar pistas de pickleball sin inversión, hablemos.
               </p>
 
               <div className="space-y-4 mb-10">
@@ -384,7 +384,7 @@ export default function Home() {
                     <span className="text-pickletrack-lime">T</span>
                   </div>
                   <div>
-                    <p className="font-body text-sm text-white/40 uppercase tracking-wider">Telefono</p>
+                    <p className="font-body text-sm text-white/40 uppercase tracking-wider">Teléfono</p>
                     <a href="tel:+34647432206" className="font-body text-lg text-white hover:text-pickletrack-lime transition-colors">
                       +34 647 432 206
                     </a>
@@ -403,7 +403,7 @@ export default function Home() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                      Nombre Institucion
+                      Nombre Institución
                     </label>
                     <input
                       type="text"
@@ -420,7 +420,7 @@ export default function Home() {
                       <option value="colegio">Colegio</option>
                       <option value="club">Club Deportivo</option>
                       <option value="hotel">Hotel</option>
-                      <option value="asociacion">Asociacion</option>
+                      <option value="asociacion">Asociación</option>
                       <option value="otro">Otro</option>
                     </select>
                   </div>
@@ -451,7 +451,7 @@ export default function Home() {
 
                 <div>
                   <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                    Telefono
+                    Teléfono
                   </label>
                   <input
                     type="tel"
@@ -467,7 +467,7 @@ export default function Home() {
                   <textarea
                     rows={4}
                     className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors resize-none"
-                    placeholder="Cuentanos sobre tu espacio y que necesitas..."
+                    placeholder="Cuéntanos sobre tu espacio y qué necesitas..."
                   />
                 </div>
 
@@ -500,7 +500,7 @@ export default function Home() {
             </div>
 
             <p className="font-body text-sm text-white/40">
-              © 2025 PickleTrack. Diseno - Construccion - Gestion
+              © 2025 PickleTrack. Diseño - Construcción - Gestión
             </p>
 
             <div className="flex items-center gap-2">

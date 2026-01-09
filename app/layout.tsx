@@ -17,12 +17,12 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'PickleTrack | Pistas de Pickleball para Colegios y Clubs',
-  description: 'Disenamos, construimos y gestionamos instalaciones de Pickleball en colegios y otros espacios. Mas de 30 anos de experiencia en escuelas deportivas.',
+  description: 'Diseñamos, construimos y gestionamos instalaciones de Pickleball en colegios y otros espacios. Más de 30 años de experiencia en escuelas deportivas.',
   keywords: ['pickleball', 'colegios', 'pistas', 'escuelas deportivas', 'Madrid', 'instalaciones deportivas'],
   authors: [{ name: 'PickleTrack' }],
   openGraph: {
     title: 'PickleTrack | Pistas de Pickleball',
-    description: 'Disenamos, construimos y gestionamos instalaciones de Pickleball',
+    description: 'Diseñamos, construimos y gestionamos instalaciones de Pickleball',
     url: 'https://pickletrack.es',
     siteName: 'PickleTrack',
     locale: 'es_ES',
