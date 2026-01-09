@@ -36,17 +36,15 @@ export function Header() {
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center gap-3 group">
-            <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+            <div className="relative w-48 h-36 transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/brand/icon.png"
+                src="/brand/pickletrack.png"
                 alt="PickleTrack"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
+                priority
               />
             </div>
-            <span className="font-display text-2xl tracking-wider text-pickletrack-white group-hover:text-pickletrack-lime transition-colors">
-              PICKLETRACK
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
