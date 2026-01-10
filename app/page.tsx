@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-pickletrack-black via-pickletrack-dark to-pickletrack-black">
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-pickletrack-black via-pickletrack-dark to-pickletrack-black hero-light-wrapper">
         {/* Background effects */}
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute inset-0 bg-gradient-radial from-pickletrack-lime/8 via-transparent to-transparent" />
@@ -386,7 +386,10 @@ export default function Home() {
       </section>
 
       {/* School/Escuela Section */}
-      <section id="escuela" className="relative py-20 lg:py-24 bg-pickletrack-dark">
+      <section
+        id="escuela"
+        className="relative py-20 lg:py-24 bg-pickletrack-dark"
+      >
         <div className="absolute inset-0 bg-grid opacity-20" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -498,8 +501,145 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Primera Escuela - Saint Chaumond */}
+      <section className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-dark to-pickletrack-black overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-15" />
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[#1a5fb4]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-pickletrack-gold/10 rounded-full blur-[120px]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-pickletrack-gold/10 border border-pickletrack-gold/30 rounded-full mb-6">
+                <span className="w-2 h-2 bg-pickletrack-gold rounded-full animate-pulse" />
+                <span className="font-body text-sm text-pickletrack-gold uppercase tracking-wider">
+                  Septiembre 2026
+                </span>
+              </div>
+
+              <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] mb-4">
+                Primera Escuela PickleTrack
+              </p>
+              <h2 className="section-heading text-pickletrack-white mb-6">
+                Colegio{" "}
+                <span className="text-pickletrack-gold">Saint Chaumond</span>
+              </h2>
+              <p className="font-body text-lg text-white/60 mb-8 max-w-lg">
+                Nuestra primera escuela de Pickleball y MiniTenis en Madrid. 3
+                pistas profesionales, programas para todas las edades y eventos
+                promocionales durante la primavera.
+              </p>
+
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                  <p className="font-display text-3xl text-pickletrack-lime">
+                    3
+                  </p>
+                  <p className="font-body text-xs text-white/50 uppercase">
+                    Pistas
+                  </p>
+                </div>
+                <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                  <p className="font-display text-3xl text-pickletrack-cyan">
+                    2
+                  </p>
+                  <p className="font-body text-xs text-white/50 uppercase">
+                    Programas
+                  </p>
+                </div>
+                <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                  <p className="font-display text-3xl text-pickletrack-magenta">
+                    4+
+                  </p>
+                  <p className="font-body text-xs text-white/50 uppercase">
+                    Eventos
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="/escuela/saint-chaumond"
+                className="inline-flex items-center gap-3 btn-primary"
+              >
+                <span>Ver Escuela</span>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            {/* Card visual */}
+            <div className="relative hidden lg:block">
+              <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                {/* PickleTrack + School */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="relative w-32 h-10">
+                    <Image
+                      src="/brand/pickletrack.png"
+                      alt="PickleTrack"
+                      fill
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <div className="px-3 py-1 bg-pickletrack-gold text-pickletrack-black font-display text-xs uppercase tracking-wider rounded">
+                    2026
+                  </div>
+                </div>
+
+                <div className="text-center py-8 border-y border-white/10">
+                  <p className="font-body text-white/40 text-xs uppercase tracking-[0.2em] mb-2">
+                    Union-Chrétienne de
+                  </p>
+                  <h3 className="font-display text-4xl text-white uppercase">
+                    Saint Chaumond
+                  </h3>
+                  <p className="font-body text-white/50 text-sm mt-2">
+                    C. de Rodríguez Marín, 30-32, Madrid
+                  </p>
+                </div>
+
+                {/* Programs */}
+                <div className="grid grid-cols-2 gap-4 mt-8">
+                  <div className="p-4 bg-pickletrack-lime/10 border border-pickletrack-lime/30 rounded-lg text-center">
+                    <span className="text-2xl mb-2 block">🏓</span>
+                    <p className="font-display text-sm text-pickletrack-lime uppercase">
+                      Pickleball
+                    </p>
+                  </div>
+                  <div className="p-4 bg-pickletrack-magenta/10 border border-pickletrack-magenta/30 rounded-lg text-center">
+                    <span className="text-2xl mb-2 block">🎾</span>
+                    <p className="font-display text-sm text-pickletrack-magenta uppercase">
+                      MiniTenis
+                    </p>
+                  </div>
+                </div>
+
+                {/* Floating badge */}
+                <div className="absolute -top-4 -right-4 px-4 py-2 bg-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider rounded shadow-lg animate-float">
+                  Inscripciones Agosto
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Partners Section */}
-      <section id="partners" className="relative py-20 lg:py-24 bg-pickletrack-black">
+      <section
+        id="partners"
+        className="relative py-20 lg:py-24 bg-pickletrack-black"
+      >
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] mb-4">

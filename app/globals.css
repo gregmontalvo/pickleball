@@ -290,291 +290,1129 @@ body {
 .border-pickletrack-gold { border-color: var(--color-pickletrack-gold); }
 
 /* ========================================
-   LIGHT MODE STYLES - Professional Design
+   LIGHT MODE STYLES - Modern Sports Design
+   Clean, professional, high-end sports aesthetic
    ======================================== */
 
-/* Light mode base - clean white with subtle warmth */
+html.light {
+  /* Clean, sophisticated base colors */
+  --light-bg-primary: #FFFFFF;
+  --light-bg-secondary: #F8FAFC;
+  --light-bg-tertiary: #F1F5F9;
+  --light-bg-card: #FFFFFF;
+  
+  /* Strong text hierarchy */
+  --light-text-primary: #0F172A;
+  --light-text-secondary: #334155;
+  --light-text-muted: #64748B;
+  --light-text-subtle: #94A3B8;
+  
+  /* Refined shadows - no harsh edges */
+  --light-border: rgba(15, 23, 42, 0.06);
+  --light-border-strong: rgba(15, 23, 42, 0.12);
+  --light-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --light-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --light-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 4px 8px rgba(15, 23, 42, 0.04);
+  --light-shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.1), 0 8px 16px rgba(15, 23, 42, 0.06);
+  
+  /* VIBRANT accent colors - sports energy without being garish */
+  --light-accent-primary: #10B981;      /* Emerald - fresh, energetic */
+  --light-accent-primary-dark: #059669;
+  --light-accent-primary-bg: rgba(16, 185, 129, 0.08);
+  
+  --light-accent-secondary: #8B5CF6;    /* Violet - modern, premium */
+  --light-accent-secondary-dark: #7C3AED;
+  --light-accent-secondary-bg: rgba(139, 92, 246, 0.08);
+  
+  --light-accent-tertiary: #06B6D4;     /* Cyan - fresh, sporty */
+  --light-accent-tertiary-dark: #0891B2;
+  --light-accent-tertiary-bg: rgba(6, 182, 212, 0.08);
+  
+  --light-accent-warm: #F59E0B;         /* Amber - warm accent (not ugly ochre) */
+  --light-accent-warm-dark: #D97706;
+  --light-accent-warm-bg: rgba(245, 158, 11, 0.08);
+  
+  --light-accent-energy: #EC4899;       /* Pink - energy, excitement */
+  --light-accent-energy-dark: #DB2777;
+  --light-accent-energy-bg: rgba(236, 72, 153, 0.08);
+}
+
+/* Light mode base */
 html.light body {
-  background-color: #FAFAFA;
-  color: #1a1a1a;
+  background-color: var(--light-bg-primary);
+  color: var(--light-text-primary);
 }
 
 html.light ::selection {
-  background-color: var(--color-pickletrack-gold);
+  background-color: var(--light-accent-primary);
   color: white;
 }
 
 /* Light mode scrollbar */
 html.light ::-webkit-scrollbar-track {
-  background-color: #F0F0F0;
+  background-color: var(--light-bg-tertiary);
 }
 
 html.light ::-webkit-scrollbar-thumb {
-  background-color: rgba(229, 168, 53, 0.5);
+  background-color: var(--light-accent-primary);
+  opacity: 0.6;
 }
 
 html.light ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(229, 168, 53, 0.7);
+  background-color: var(--light-accent-primary-dark);
 }
 
-/* Light mode grid - subtle */
+/* Light mode grid - subtle, professional */
 html.light .bg-grid {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
 }
 
 html.light .bg-grid-dense {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
 }
 
-/* Light mode buttons */
+/* ========================================
+   LIGHT MODE BUTTONS - Bold & Energetic
+   ======================================== */
+
 html.light .btn-primary {
-  background-color: var(--color-pickletrack-gold);
+  background: linear-gradient(135deg, var(--light-accent-primary) 0%, var(--light-accent-primary-dark) 100%) !important;
+  color: white !important;
+  box-shadow: var(--light-shadow-md), 0 0 0 1px rgba(16, 185, 129, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+html.light .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 html.light .btn-primary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
   box-shadow:
-    0 0 10px var(--color-pickletrack-gold),
-    0 0 20px var(--color-pickletrack-gold),
-    0 0 40px rgba(229, 168, 53, 0.3);
+    var(--light-shadow-lg),
+    0 0 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+html.light .btn-primary:hover::before {
+  left: 100%;
 }
 
 html.light .btn-secondary {
-  color: #1a1a1a;
-  border-color: rgba(0, 0, 0, 0.25);
+  color: var(--light-text-primary) !important;
+  border-color: var(--light-border-strong) !important;
+  background-color: var(--light-bg-card) !important;
+  box-shadow: var(--light-shadow-sm);
 }
 
 html.light .btn-secondary:hover {
-  border-color: var(--color-pickletrack-gold);
-  color: #B8860B;
+  border-color: var(--light-accent-primary) !important;
+  color: var(--light-accent-primary) !important;
+  box-shadow: var(--light-shadow-md);
+  transform: translateY(-1px);
 }
 
-/* Light mode cards */
+/* ========================================
+   LIGHT MODE CARDS - Clean & Elevated
+   ======================================== */
+
 html.light .card-neon {
-  background-color: white;
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background-color: var(--light-bg-card) !important;
+  border-color: var(--light-border) !important;
+  box-shadow: var(--light-shadow-md);
 }
 
 html.light .card-neon:hover {
-  border-color: rgba(229, 168, 53, 0.4);
-  background-color: white;
-  box-shadow: 0 4px 20px rgba(229, 168, 53, 0.15);
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  background-color: var(--light-bg-card) !important;
+  box-shadow: var(--light-shadow-lg), 0 0 0 1px rgba(16, 185, 129, 0.1);
 }
 
 /* Court cards - KEEP DARK for proper visibility */
 html.light .court-card-bg {
-  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%) !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Invert white images/logos in light mode */
+/* ========================================
+   LIGHT MODE SECTIONS - Clean Alternating
+   ======================================== */
+
+html.light section {
+  background: var(--light-bg-primary) !important;
+}
+
+/* Hero gets special treatment below */
+
+/* Alternating sections */
+html.light section:nth-of-type(2n) {
+  background: var(--light-bg-secondary) !important;
+}
+
+html.light section:nth-of-type(2n+1) {
+  background: var(--light-bg-primary) !important;
+}
+
+/* CTA section - subtle gradient */
+html.light section#inscripcion,
+html.light section#contacto {
+  background: linear-gradient(
+    180deg,
+    var(--light-bg-secondary) 0%,
+    var(--light-bg-tertiary) 100%
+  ) !important;
+}
+
+/* ========================================
+   LIGHT MODE BACKGROUNDS - Warm & Clean
+   ======================================== */
+
+html.light .bg-pickletrack-black {
+  background-color: var(--light-bg-primary) !important;
+}
+
+html.light .bg-pickletrack-dark {
+  background-color: var(--light-bg-secondary) !important;
+}
+
+/* Gradient stops */
+html.light [class*="from-pickletrack-black"] {
+  --tw-gradient-from: var(--light-bg-primary) !important;
+}
+
+html.light [class*="via-pickletrack-black"],
+html.light [class*="via-\\[#0a1628\\]"],
+html.light [class*="via-pickletrack-dark"] {
+  --tw-gradient-via: var(--light-bg-secondary) !important;
+}
+
+html.light [class*="to-pickletrack-black"] {
+  --tw-gradient-to: var(--light-bg-primary) !important;
+}
+
+html.light [class*="from-pickletrack-dark"] {
+  --tw-gradient-from: var(--light-bg-secondary) !important;
+}
+
+html.light [class*="to-pickletrack-dark"] {
+  --tw-gradient-to: var(--light-bg-tertiary) !important;
+}
+
+/* ========================================
+   LIGHT MODE TEXT - Strong Hierarchy
+   Comprehensive text visibility fixes
+   ======================================== */
+
+/* Primary text - fully opaque white becomes dark */
+html.light .text-pickletrack-white,
+html.light .text-white,
+html.light [class*="text-pickletrack-white"],
+html.light main .text-pickletrack-white,
+html.light main .text-white {
+  color: var(--light-text-primary) !important;
+}
+
+/* High emphasis text - 70-80% opacity */
+html.light [class*="text-white\\/70"],
+html.light [class*="text-white\\/80"],
+html.light main [class*="text-white\\/70"],
+html.light main [class*="text-white\\/80"],
+html.light .text-white\/70,
+html.light .text-white\/80,
+html.light p.text-white\/70,
+html.light p.text-white\/80,
+html.light span.text-white\/70,
+html.light span.text-white\/80 {
+  color: var(--light-text-secondary) !important;
+}
+
+/* Medium emphasis text - 50-60% opacity */
+html.light [class*="text-white\\/50"],
+html.light [class*="text-white\\/60"],
+html.light main [class*="text-white\\/50"],
+html.light main [class*="text-white\\/60"],
+html.light .text-white\/50,
+html.light .text-white\/60,
+html.light p.text-white\/50,
+html.light p.text-white\/60,
+html.light span.text-white\/50,
+html.light span.text-white\/60,
+html.light section p.text-white\/60,
+html.light section p.text-white\/50,
+html.light .font-body.text-white\/60,
+html.light .font-body.text-white\/50,
+html.light .font-body.text-lg.text-white\/60,
+html.light .font-body.text-xl.text-white\/60 {
+  color: var(--light-text-muted) !important;
+}
+
+/* Low emphasis text - 30-40% opacity */
+html.light [class*="text-white\\/30"],
+html.light [class*="text-white\\/40"],
+html.light main [class*="text-white\\/30"],
+html.light main [class*="text-white\\/40"],
+html.light .text-white\/30,
+html.light .text-white\/40,
+html.light p.text-white\/30,
+html.light p.text-white\/40,
+html.light span.text-white\/30,
+html.light span.text-white\/40,
+html.light section p.text-white\/40,
+html.light section p.text-white\/30,
+html.light .font-body.text-white\/40,
+html.light .font-body.text-white\/30,
+html.light .font-body.text-sm.text-white\/40,
+html.light .font-body.text-sm.text-white\/50 {
+  color: var(--light-text-subtle) !important;
+}
+
+/* Super low emphasis - 10-20% opacity */
+html.light [class*="text-white\\/10"],
+html.light [class*="text-white\\/20"] {
+  color: rgba(100, 116, 139, 0.5) !important;
+}
+
+/* ========================================
+   LIGHT MODE ACCENTS - Vibrant & Modern
+   ======================================== */
+
+/* Gold becomes warm amber - NOT ugly ochre */
+html.light .text-pickletrack-gold,
+html.light .text-accent-gold {
+  color: var(--light-accent-warm) !important;
+}
+
+/* Lime becomes emerald - fresh & professional */
+html.light .text-pickletrack-lime,
+html.light .text-accent-lime {
+  color: var(--light-accent-primary) !important;
+}
+
+/* Cyan stays vibrant */
+html.light .text-pickletrack-cyan,
+html.light .text-accent-cyan {
+  color: var(--light-accent-tertiary) !important;
+}
+
+/* Magenta becomes rich violet */
+html.light .text-pickletrack-magenta,
+html.light .text-accent-magenta {
+  color: var(--light-accent-secondary) !important;
+}
+
+/* ========================================
+   LIGHT MODE BORDERS
+   ======================================== */
+
+html.light [class*="border-white\\/5"],
+html.light [class*="border-white\\/10"] {
+  border-color: var(--light-border) !important;
+}
+
+html.light [class*="border-white\\/20"],
+html.light [class*="border-white\\/30"] {
+  border-color: var(--light-border-strong) !important;
+}
+
+html.light [class*="border-pickletrack-lime"] {
+  border-color: var(--light-accent-primary) !important;
+}
+
+html.light [class*="border-pickletrack-gold"] {
+  border-color: var(--light-accent-warm) !important;
+}
+
+html.light [class*="border-pickletrack-cyan"] {
+  border-color: var(--light-accent-tertiary) !important;
+}
+
+html.light [class*="border-pickletrack-magenta"] {
+  border-color: var(--light-accent-secondary) !important;
+}
+
+/* ========================================
+   LIGHT MODE BACKGROUND UTILITIES
+   ======================================== */
+
+html.light [class*="bg-white\\/5"],
+html.light [class*="bg-white\\/10"] {
+  background-color: var(--light-bg-card) !important;
+  box-shadow: var(--light-shadow-sm);
+  border: 1px solid var(--light-border);
+}
+
+html.light [class*="bg-pickletrack-dark\\/50"],
+html.light [class*="bg-pickletrack-dark\\/30"],
+html.light [class*="bg-pickletrack-black\\/50"] {
+  background-color: var(--light-bg-card) !important;
+  box-shadow: var(--light-shadow-md);
+}
+
+/* Colored backgrounds - subtle & refined */
+html.light [class*="bg-pickletrack-lime\\/10"],
+html.light [class*="from-pickletrack-lime\\/10"],
+html.light [class*="bg-pickletrack-lime\\/20"] {
+  background-color: var(--light-accent-primary-bg) !important;
+}
+
+html.light [class*="bg-pickletrack-gold\\/10"],
+html.light [class*="from-pickletrack-gold\\/10"],
+html.light [class*="bg-pickletrack-gold\\/20"] {
+  background-color: var(--light-accent-warm-bg) !important;
+}
+
+html.light [class*="bg-pickletrack-cyan\\/10"],
+html.light [class*="from-pickletrack-cyan\\/10"] {
+  background-color: var(--light-accent-tertiary-bg) !important;
+}
+
+html.light [class*="bg-pickletrack-magenta\\/10"],
+html.light [class*="from-pickletrack-magenta\\/10"] {
+  background-color: var(--light-accent-secondary-bg) !important;
+}
+
+/* ========================================
+   LIGHT MODE ACCENT BACKGROUNDS (solid)
+   ======================================== */
+
+html.light .bg-pickletrack-lime {
+  background-color: var(--light-accent-primary) !important;
+}
+
+html.light .bg-pickletrack-gold {
+  background-color: var(--light-accent-warm) !important;
+}
+
+html.light .bg-pickletrack-cyan {
+  background-color: var(--light-accent-tertiary) !important;
+}
+
+html.light .bg-pickletrack-magenta {
+  background-color: var(--light-accent-secondary) !important;
+}
+
+/* ========================================
+   LIGHT MODE CARDS & COMPONENTS
+   ======================================== */
+
+/* Program cards */
+html.light [class*="border-pickletrack-lime\\/30"] {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+  background: linear-gradient(135deg, var(--light-accent-primary-bg) 0%, var(--light-bg-card) 100%) !important;
+}
+
+html.light [class*="border-pickletrack-magenta\\/30"] {
+  border-color: rgba(139, 92, 246, 0.25) !important;
+  background: linear-gradient(135deg, var(--light-accent-secondary-bg) 0%, var(--light-bg-card) 100%) !important;
+}
+
+html.light [class*="border-pickletrack-gold\\/30"] {
+  border-color: rgba(245, 158, 11, 0.25) !important;
+  background: linear-gradient(135deg, var(--light-accent-warm-bg) 0%, var(--light-bg-card) 100%) !important;
+}
+
+html.light [class*="border-pickletrack-cyan\\/30"] {
+  border-color: rgba(6, 182, 212, 0.25) !important;
+  background: linear-gradient(135deg, var(--light-accent-tertiary-bg) 0%, var(--light-bg-card) 100%) !important;
+}
+
+/* ========================================
+   LIGHT MODE FOOTER
+   ======================================== */
+
+html.light footer {
+  background: var(--light-bg-tertiary) !important;
+  border-color: var(--light-border) !important;
+}
+
+/* ========================================
+   LIGHT MODE FORM CONTAINER
+   ======================================== */
+
+/* Form container background - clean white in light mode */
+html.light [class*="bg-pickletrack-black\\/50"],
+html.light .bg-pickletrack-black\/50,
+html.light div.bg-pickletrack-black\/50 {
+  background-color: var(--light-bg-card) !important;
+  border-color: var(--light-border-strong) !important;
+  box-shadow: var(--light-shadow-md) !important;
+}
+
+/* ========================================
+   LIGHT MODE FORM INPUTS
+   ======================================== */
+
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: var(--light-bg-primary) !important;
+  border: 1px solid var(--light-border-strong) !important;
+  color: var(--light-text-primary) !important;
+  box-shadow: var(--light-shadow-sm);
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: var(--light-accent-primary) !important;
+  box-shadow: var(--light-shadow-sm), 0 0 0 3px rgba(16, 185, 129, 0.12);
+  outline: none;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder,
+html.light select::placeholder {
+  color: var(--light-text-subtle) !important;
+}
+
+/* Specific form inputs with dark backgrounds */
+html.light input[class*="bg-pickletrack-dark"],
+html.light select[class*="bg-pickletrack-dark"],
+html.light textarea[class*="bg-pickletrack-dark"],
+html.light .bg-pickletrack-dark input,
+html.light .bg-pickletrack-dark select,
+html.light .bg-pickletrack-dark textarea {
+  background-color: var(--light-bg-primary) !important;
+  color: var(--light-text-primary) !important;
+  border-color: var(--light-border-strong) !important;
+}
+
+/* Form labels - make them visible in light mode */
+html.light label[class*="text-white\\/50"],
+html.light label.text-white\/50,
+html.light form label {
+  color: var(--light-accent-primary) !important;
+  font-weight: 600;
+}
+
+/* Select options in light mode */
+html.light select option {
+  background-color: var(--light-bg-primary) !important;
+  color: var(--light-text-primary) !important;
+}
+
+/* ========================================
+   LIGHT MODE IMAGES & ICONS
+   ======================================== */
+
+html.light img[src*="pickletrack.png"] {
+  filter: invert(1);
+}
+
 html.light .invert-on-light {
   filter: invert(1);
 }
 
-/* Light mode specific colors - use with light: prefix in components */
-@variant light (&:where(.light, .light *));
+/* Badge styling */
+html.light [class*="bg-pickletrack-lime"][class*="text-pickletrack-black"] {
+  background-color: var(--light-accent-primary) !important;
+  color: white !important;
+}
 
-/* Light mode gradient text - vibrant for light bg */
+html.light [class*="bg-pickletrack-gold"][class*="text-pickletrack-black"] {
+  background-color: var(--light-accent-warm) !important;
+  color: white !important;
+}
+
+/* ========================================
+   LIGHT MODE HOVER STATES
+   ======================================== */
+
+html.light [class*="hover\\:border-pickletrack-lime"]:hover {
+  border-color: var(--light-accent-primary) !important;
+}
+
+html.light [class*="hover\\:border-pickletrack-gold"]:hover {
+  border-color: var(--light-accent-warm) !important;
+}
+
+html.light [class*="hover\\:text-pickletrack-lime"]:hover {
+  color: var(--light-accent-primary) !important;
+}
+
+html.light [class*="hover\\:text-pickletrack-gold"]:hover {
+  color: var(--light-accent-warm) !important;
+}
+
+/* ========================================
+   LIGHT MODE SPECIAL ELEMENTS
+   ======================================== */
+
+/* Section heading */
+html.light .section-heading {
+  color: var(--light-text-primary);
+}
+
+/* Decorative blur orbs - subtle in light mode */
+html.light [class*="blur-\\[120px\\]"],
+html.light [class*="blur-\\[150px\\]"] {
+  opacity: 0.25 !important;
+}
+
+/* Map container */
+html.light iframe {
+  filter: none;
+  opacity: 1;
+}
+
+/* Courts container */
+html.light .courts-container {
+  background: radial-gradient(ellipse at center, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.9) 70%, transparent 100%);
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+/* ========================================
+   LIGHT MODE GRADIENT TEXT
+   ======================================== */
+
 html.light .gradient-text {
   background-image: linear-gradient(
     135deg,
-    #228B22 0%,
-    #008B8B 50%,
-    #8B008B 100%
+    var(--light-accent-primary) 0%,
+    var(--light-accent-tertiary) 50%,
+    var(--light-accent-secondary) 100%
   );
 }
 
 html.light .gradient-text-gold {
   background-image: linear-gradient(
     135deg,
-    #B8860B 0%,
-    #DAA520 50%,
-    #CD6600 100%
+    #D97706 0%,
+    var(--light-accent-warm) 50%,
+    #EA580C 100%
   );
 }
 
-/* Light mode section backgrounds - subtle alternation */
-html.light section {
-  background: linear-gradient(180deg, #FAFAFA 0%, #F5F5F5 100%) !important;
+/* ========================================
+   LIGHT MODE HERO - Premium Sports Design
+   ======================================== */
+
+html.light .hero-light-wrapper {
+  background:
+    /* Subtle diagonal accent */
+    linear-gradient(135deg, transparent 0%, transparent 60%, rgba(16, 185, 129, 0.03) 60%, rgba(16, 185, 129, 0.03) 100%),
+    /* Radial glow - subtle */
+    radial-gradient(ellipse at 20% 30%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
+    /* Clean gradient base */
+    linear-gradient(180deg, #FFFFFF 0%, var(--light-bg-secondary) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-html.light section:nth-child(even) {
-  background: linear-gradient(180deg, #F5F5F5 0%, #FAFAFA 100%) !important;
+/* Subtle geometric accent */
+html.light .hero-light-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.02) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Override specific background classes */
-html.light .bg-pickletrack-black,
-html.light .from-pickletrack-black,
-html.light .via-pickletrack-black,
-html.light .to-pickletrack-black {
-  background-color: #FAFAFA;
+/* Decorative line */
+html.light .hero-light-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--light-border) 50%, transparent 100%);
+  pointer-events: none;
 }
 
-html.light .bg-pickletrack-dark,
-html.light .from-pickletrack-dark,
-html.light .via-pickletrack-dark,
-html.light .to-pickletrack-dark {
-  background-color: #F5F5F5;
+/* ========================================
+   DUAL-THEME UTILITY CLASSES
+   ======================================== */
+
+.text-theme-primary {
+  color: var(--color-pickletrack-white);
+}
+html.light .text-theme-primary {
+  color: var(--light-text-primary);
 }
 
-/* Light mode text colors - strong contrast */
-html.light .text-pickletrack-white {
-  color: #1a1a1a;
+.text-theme-secondary {
+  color: rgba(255, 255, 255, 0.7);
+}
+html.light .text-theme-secondary {
+  color: var(--light-text-secondary);
 }
 
-html.light .text-white {
-  color: #1a1a1a;
+.text-theme-muted {
+  color: rgba(255, 255, 255, 0.5);
+}
+html.light .text-theme-muted {
+  color: var(--light-text-muted);
 }
 
-html.light .text-white\/60,
-html.light .text-white\/50,
-html.light .text-white\/40 {
-  color: rgba(26, 26, 26, 0.65);
+.text-theme-subtle {
+  color: rgba(255, 255, 255, 0.4);
+}
+html.light .text-theme-subtle {
+  color: var(--light-text-subtle);
 }
 
-html.light .text-white\/70,
-html.light .text-white\/80 {
-  color: rgba(26, 26, 26, 0.8);
+/* Accent colors with proper contrast */
+.text-accent-lime {
+  color: var(--color-pickletrack-lime);
+}
+html.light .text-accent-lime {
+  color: var(--light-accent-primary);
 }
 
-/* Fix for Tailwind opacity modifiers on custom colors */
-html.light [class*="text-pickletrack-white"] {
-  color: #1a1a1a;
+.text-accent-cyan {
+  color: var(--color-pickletrack-cyan);
+}
+html.light .text-accent-cyan {
+  color: var(--light-accent-tertiary);
 }
 
-/* Light mode borders - subtle */
-html.light .border-white\/10,
-html.light .border-white\/5 {
-  border-color: rgba(0, 0, 0, 0.08);
+.text-accent-gold {
+  color: var(--color-pickletrack-gold);
+}
+html.light .text-accent-gold {
+  color: var(--light-accent-warm);
 }
 
-/* Light mode backgrounds with opacity */
-html.light .bg-white\/5,
-html.light .bg-white\/10 {
-  background-color: rgba(0, 0, 0, 0.04);
+.text-accent-magenta {
+  color: var(--color-pickletrack-magenta);
+}
+html.light .text-accent-magenta {
+  color: var(--light-accent-secondary);
 }
 
-html.light .bg-pickletrack-black\/50,
-html.light .bg-pickletrack-dark\/30 {
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+/* Background colors */
+.bg-theme-primary {
+  background-color: var(--color-pickletrack-black);
+}
+html.light .bg-theme-primary {
+  background-color: var(--light-bg-primary);
 }
 
-/* Light mode gradient orbs - much softer */
-html.light .bg-pickletrack-lime\/25,
-html.light .bg-pickletrack-lime\/8 {
-  background-color: rgba(229, 168, 53, 0.08);
+.bg-theme-secondary {
+  background-color: var(--color-pickletrack-dark);
+}
+html.light .bg-theme-secondary {
+  background-color: var(--light-bg-secondary);
 }
 
-html.light .bg-pickletrack-magenta\/25,
-html.light .bg-pickletrack-magenta\/8 {
-  background-color: rgba(147, 51, 234, 0.06);
+.bg-theme-card {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+html.light .bg-theme-card {
+  background-color: var(--light-bg-card);
+  box-shadow: var(--light-shadow-sm);
+  border: 1px solid var(--light-border);
 }
 
-html.light .bg-pickletrack-cyan\/15,
-html.light .bg-pickletrack-cyan\/8 {
-  background-color: rgba(0, 139, 139, 0.05);
+/* Border colors */
+.border-theme-subtle {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+html.light .border-theme-subtle {
+  border-color: var(--light-border);
 }
 
-/* Light mode footer */
-html.light footer {
-  background: linear-gradient(180deg, #F0F0F0 0%, #E8E8E8 100%) !important;
-  border-color: rgba(0, 0, 0, 0.08);
+.border-theme-medium {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+html.light .border-theme-medium {
+  border-color: var(--light-border-strong);
 }
 
-/* Light mode form inputs */
-html.light input,
-html.light select,
-html.light textarea {
-  background-color: white !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
-  color: #1a1a1a !important;
+/* Accent backgrounds */
+.bg-accent-lime-subtle {
+  background-color: rgba(204, 255, 0, 0.1);
+}
+html.light .bg-accent-lime-subtle {
+  background-color: var(--light-accent-primary-bg);
 }
 
-html.light input:focus,
-html.light select:focus,
-html.light textarea:focus {
-  border-color: var(--color-pickletrack-gold) !important;
-  box-shadow: 0 0 0 3px rgba(229, 168, 53, 0.1);
-}
-
-html.light input::placeholder,
-html.light textarea::placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-/* Light mode accent colors - use gold instead of lime for visibility */
-html.light .text-pickletrack-lime {
-  color: #228B22; /* Forest green - great contrast */
-}
-
-html.light .text-pickletrack-cyan {
-  color: #008B8B; /* Dark cyan */
-}
-
-html.light .text-pickletrack-magenta {
-  color: #8B008B; /* Dark magenta */
-}
-
-html.light .bg-pickletrack-lime\/10 {
-  background-color: rgba(34, 139, 34, 0.1);
-}
-
-/* Light mode partners */
-html.light .bg-pickletrack-dark\/30 {
-  background-color: white;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-html.light .hover\:border-pickletrack-lime\/30:hover {
-  border-color: rgba(229, 168, 53, 0.5) !important;
-}
-
-html.light .group-hover\:bg-pickletrack-lime\/10:hover {
+.bg-accent-gold-subtle {
   background-color: rgba(229, 168, 53, 0.1);
 }
-
-/* Light mode - invert white icons/images */
-html.light img[src*="-white.png"],
-html.light img[src*="pickletrack.png"] {
-  filter: invert(1);
+html.light .bg-accent-gold-subtle {
+  background-color: var(--light-accent-warm-bg);
 }
 
-/* Light mode - show dark background behind hero courts */
-html.light .light-mode-bg {
-  opacity: 1 !important;
+.bg-accent-cyan-subtle {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+html.light .bg-accent-cyan-subtle {
+  background-color: var(--light-accent-tertiary-bg);
 }
 
-/* Light mode badges */
-html.light .invert {
-  filter: invert(0);
+.bg-accent-magenta-subtle {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+html.light .bg-accent-magenta-subtle {
+  background-color: var(--light-accent-secondary-bg);
 }
 
-/* Light mode stats - keep vibrant colors */
-html.light .text-pickletrack-gold {
-  color: #B8860B; /* Dark goldenrod for contrast */
+/* Border colors for decorative circles */
+.border-accent-gold {
+  border-color: var(--color-pickletrack-gold);
+}
+html.light .border-accent-gold {
+  border-color: var(--light-accent-warm);
 }
 
-/* Section heading in light mode */
-html.light .section-heading {
-  color: #1a1a1a;
+.border-accent-lime {
+  border-color: var(--color-pickletrack-lime);
+}
+html.light .border-accent-lime {
+  border-color: var(--light-accent-primary);
 }
 
-/* Contact form in light mode */
-html.light .bg-pickletrack-black\/50 {
-  background-color: white;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+/* ========================================
+   LIGHT MODE STATS & NUMBERS
+   ======================================== */
+
+html.light .font-display[class*="text-pickletrack-lime"] {
+  color: var(--light-accent-primary) !important;
 }
 
-/* Hero courts container dark bg in light mode */
-html.light .courts-container {
-  background: radial-gradient(ellipse at center, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.9) 70%, transparent 100%);
-  border-radius: 2rem;
-  padding: 2rem;
+html.light .font-display[class*="text-pickletrack-cyan"] {
+  color: var(--light-accent-tertiary) !important;
 }
+
+html.light .font-display[class*="text-pickletrack-magenta"] {
+  color: var(--light-accent-secondary) !important;
+}
+
+html.light .font-display[class*="text-pickletrack-gold"] {
+  color: var(--light-accent-warm) !important;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes pulse-accent {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+}
+
+html.light .animate-pulse {
+  animation: pulse-accent 2s infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   LIGHT MODE HEADER STYLES
+   ======================================== */
+
+/* Header background when scrolled */
+html.light .scrolled-header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: var(--light-border) !important;
+}
+
+/* Navigation links - high specificity to override Tailwind */
+html.light .nav-link,
+html.light .nav-link[class*="text-white"],
+html.light a.nav-link {
+  color: var(--light-text-secondary) !important;
+}
+
+html.light .nav-link:hover,
+html.light .nav-link[class*="text-white"]:hover,
+html.light a.nav-link:hover {
+  color: var(--light-accent-primary) !important;
+}
+
+/* Navigation link underline */
+html.light .nav-link-underline {
+  background-color: var(--light-accent-primary) !important;
+}
+
+/* Header CTA button */
+html.light .header-cta {
+  background-color: var(--light-accent-warm) !important;
+}
+
+html.light .header-cta:hover {
+  box-shadow:
+    0 0 10px var(--light-accent-warm),
+    0 0 20px var(--light-accent-warm),
+    0 0 40px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Mobile menu hamburger bars */
+html.light .mobile-menu-bar {
+  background-color: var(--light-text-primary) !important;
+}
+
+/* Mobile menu overlay */
+html.light .mobile-menu {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+/* Mobile navigation links */
+html.light .mobile-nav-link {
+  color: var(--light-text-primary) !important;
+}
+
+html.light .mobile-nav-link:hover {
+  color: var(--light-accent-primary) !important;
+}
+
+/* ========================================
+   LIGHT MODE THEME TOGGLE
+   ======================================== */
+
+/* Theme toggle button - make it clearly visible in light mode */
+html.light .theme-toggle {
+  background-color: #E2E8F0 !important; /* Slightly darker gray for better contrast */
+  border: 2px solid var(--light-text-secondary) !important;
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.1),
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    inset 0 0 0 1px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light .theme-toggle:hover {
+  border-color: var(--light-accent-primary) !important;
+  box-shadow: 
+    0 4px 12px rgba(15, 23, 42, 0.15),
+    0 2px 4px rgba(15, 23, 42, 0.1),
+    inset 0 0 0 1px rgba(16, 185, 129, 0.1) !important;
+  background-color: var(--light-bg-secondary) !important;
+  transform: scale(1.05);
+}
+
+/* Toggle circle (the moving part) - add shadow for depth and visibility */
+html.light .theme-toggle > div {
+  box-shadow: 
+    0 2px 4px rgba(15, 23, 42, 0.1),
+    0 1px 2px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Icons inside toggle - ensure they're visible */
+html.light .theme-toggle svg {
+  color: var(--light-text-primary) !important;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+/* Specific icon colors */
+html.light .theme-toggle svg.text-pickletrack-black {
+  color: var(--light-text-primary) !important;
+}
+
+/* When toggle circle has gold background (light mode active) */
+html.light .theme-toggle > div.bg-pickletrack-gold {
+  background-color: var(--light-accent-warm) !important;
+  box-shadow: 
+    0 3px 6px rgba(245, 158, 11, 0.2),
+    0 1px 3px rgba(15, 23, 42, 0.1) !important;
+  border: 1px solid rgba(217, 119, 6, 0.3) !important;
+}
+
+/* When toggle circle has lime background (dark mode active) */
+html.light .theme-toggle > div.bg-pickletrack-lime {
+  background-color: var(--light-accent-primary) !important;
+  box-shadow: 
+    0 3px 6px rgba(16, 185, 129, 0.2),
+    0 1px 3px rgba(15, 23, 42, 0.1) !important;
+  border: 1px solid rgba(5, 150, 105, 0.3) !important;
+}
+
+/* ========================================
+   LIGHT MODE HEADER CTA BUTTON
+   ======================================== */
+
+html.light .header-cta {
+  background: linear-gradient(135deg, var(--light-accent-primary) 0%, var(--light-accent-primary-dark) 100%) !important;
+  color: white !important;
+  box-shadow: var(--light-shadow-md);
+}
+
+html.light .header-cta:hover {
+  box-shadow: var(--light-shadow-lg), 0 0 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* ========================================
+   LIGHT MODE HERO TEXT FIXES
+   ======================================== */
+
+/* Ensure hero description text is visible */
+html.light section.hero-light-wrapper [class*="text-white\\/60"],
+html.light section.hero-light-wrapper .font-body.text-lg {
+  color: var(--light-text-secondary) !important;
+}
+
+/* Stats text in hero */
+html.light section.hero-light-wrapper [class*="text-white\\/50"] {
+  color: var(--light-text-muted) !important;
+}
+
+/* ========================================
+   LIGHT MODE SECTION-SPECIFIC TEXT FIXES
+   ======================================== */
+
+/* Services section - card descriptions */
+html.light #servicios p.font-body,
+html.light #servicios .card-neon p,
+html.light #servicios .relative p.font-body {
+  color: var(--light-text-muted) !important;
+}
+
+/* Court designs section description */
+html.light #disenos p.font-body.text-lg,
+html.light #disenos .text-white\/50 {
+  color: var(--light-text-muted) !important;
+}
+
+/* Features text in designs section */
+html.light #disenos .text-white\/70,
+html.light #disenos span.font-body {
+  color: var(--light-text-secondary) !important;
+}
+
+/* School section descriptions */
+html.light #escuela p.font-body,
+html.light #escuela .space-y-6 p,
+html.light #escuela .text-white\/60 {
+  color: var(--light-text-muted) !important;
+}
+
+/* Badge names in school section */
+html.light #escuela .text-white\/70,
+html.light .bg-gradient-to-br p.font-body.text-sm {
+  color: var(--light-text-secondary) !important;
+}
+
+/* Saint Chaumond section */
+html.light section:has(.text-pickletrack-gold) p.font-body.text-lg,
+html.light section p.font-body.text-lg.text-white\/60 {
+  color: var(--light-text-muted) !important;
+}
+
+/* Partners section descriptions */
+html.light #partners p.font-body.text-sm,
+html.light #partners .text-white\/40 {
+  color: var(--light-text-subtle) !important;
+}
+
+/* Contact section */
+html.light #contacto p.font-body.text-xl,
+html.light #contacto .text-white\/60 {
+  color: var(--light-text-muted) !important;
+}
+
+/* Contact info labels */
+html.light #contacto .text-white\/40,
+html.light #contacto p.font-body.text-sm {
+  color: var(--light-text-subtle) !important;
+}
+
+/* Form labels - make them emerald green and bold */
+html.light #contacto label,
+html.light #contacto label[class*="text-white\\/50"],
+html.light #contacto label.text-white\/50,
+html.light form label,
+html.light .text-white\/50.uppercase {
+  color: var(--light-accent-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Form container specific */
+html.light #contacto [class*="bg-pickletrack-black\\/50"],
+html.light #contacto .bg-pickletrack-black\/50 {
+  background-color: var(--light-bg-card) !important;
+  border-color: var(--light-border-strong) !important;
+  box-shadow: var(--light-shadow-lg) !important;
+}
+
+/* Form inputs in contact section */
+html.light #contacto input,
+html.light #contacto select,
+html.light #contacto textarea {
+  background-color: var(--light-bg-primary) !important;
+  border-color: var(--light-border-strong) !important;
+  color: var(--light-text-primary) !important;
+}
+
+html.light #contacto input:focus,
+html.light #contacto select:focus,
+html.light #contacto textarea:focus {
+  border-color: var(--light-accent-primary) !important;
+  box-shadow: var(--light-shadow-sm), 0 0 0 3px rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Footer text */
+html.light footer p.font-body.text-sm,
+html.light footer .text-white\/40,
+html.light footer span.text-white\/40 {
+  color: var(--light-text-subtle) !important;
+}
+
+/* ========================================
+   LIGHT MODE STAT LABELS AND NUMBERS
+   ======================================== */
+
+/* Stats in all sections */
+html.light .text-white\/50.uppercase,
+html.light p.font-body.text-xs.text-white\/50,
+html.light p.font-body.text-sm.text-white\/50 {
+  color: var(--light-text-muted) !important;
+}
+
+/* Small uppercase labels */
+html.light .text-xs.uppercase.text-white\/50,
+html.light .text-sm.uppercase.text-white\/50 {
+  color: var(--light-text-muted) !important;
+}
+
+/* ========================================
+   LIGHT MODE BADGES AND PILL TEXT
+   ======================================== */
+
+/* Status badges with backgrounds */
+html.light .bg-pickletrack-gold.text-pickletrack-black,
+html.light .bg-pickletrack-lime.text-pickletrack-black {
+  color: var(--light-text-primary) !important;
+}
+
+/* Badge descriptions inside colored containers */
+html.light [class*="bg-pickletrack-"][class*="/10"] p,
+html.light [class*="bg-gradient-to-br"] p.text-white\/70 {
+  color: var(--light-text-secondary) !important;
+}
+
+/* ========================================
+   LIGHT MODE STRONG / BOLD TEXT
+   ======================================== */
+
+/* Strong text within paragraphs */
+html.light strong.text-pickletrack-gold,
+html.light strong.text-pickletrack-lime {
+  font-weight: 600;
+}
+
+html.light strong.text-white,
+html.light .text-white strong {
+  color: var(--light-text-primary) !important;
+}
+

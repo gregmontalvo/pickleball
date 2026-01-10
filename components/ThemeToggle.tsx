@@ -29,7 +29,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-14 h-8 rounded-full bg-white/10 border border-white/20 transition-all duration-300 hover:scale-105 hover:border-white/40"
+      className="theme-toggle relative w-16 h-8 rounded-full bg-white/10 border border-white/20 transition-all duration-300 hover:scale-105 hover:border-white/40 shrink-0"
       aria-label={`Cambiar a modo ${resolvedTheme === 'dark' ? 'claro' : 'oscuro'}`}
       title={`Modo actual: ${resolvedTheme === 'dark' ? 'oscuro' : 'claro'}`}
     >
@@ -37,7 +37,7 @@ export function ThemeToggle() {
         className={`absolute top-1 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
           resolvedTheme === 'dark'
             ? 'left-1 bg-pickletrack-lime'
-            : 'left-7 bg-pickletrack-gold'
+            : 'left-9 bg-pickletrack-gold'
         }`}
       >
         {resolvedTheme === 'dark' ? <MoonIcon /> : <SunIcon />}

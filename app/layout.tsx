@@ -17,6 +17,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pickletrack.es'),
   title: 'PickleTrack | Pistas de Pickleball para Colegios y Clubs',
   description: 'Diseñamos, construimos y gestionamos instalaciones de Pickleball en colegios y otros espacios. Más de 30 años de experiencia en escuelas deportivas.',
   keywords: ['pickleball', 'colegios', 'pistas', 'escuelas deportivas', 'Madrid', 'instalaciones deportivas'],
@@ -26,8 +27,22 @@ export const metadata: Metadata = {
     description: 'Diseñamos, construimos y gestionamos instalaciones de Pickleball',
     url: 'https://pickletrack.es',
     siteName: 'PickleTrack',
+    images: [
+      {
+        url: '/brand/og-pickletrack.png',
+        width: 1200,
+        height: 630,
+        alt: 'PickleTrack - Pistas de Pickleball',
+      },
+    ],
     locale: 'es_ES',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PickleTrack | Pistas de Pickleball',
+    description: 'Diseñamos, construimos y gestionamos instalaciones de Pickleball',
+    images: ['/brand/og-pickletrack.png'],
   },
 }
 
