@@ -117,7 +117,7 @@ export default function SaintChaumondPage() {
         <Header />
 
         {/* Hero Section */}
-        <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 bg-gradient-to-br from-pickletrack-black via-[#0a1628] to-pickletrack-black hero-light-wrapper overflow-hidden">
+        <section className="relative min-h-[calc(100vh-5rem)] flex items-center pt-20 pb-16 md:pb-20 bg-gradient-to-br from-pickletrack-black via-[#0a1628] to-pickletrack-black hero-light-wrapper overflow-hidden">
           {/* Background effects */}
           <div className="absolute inset-0 bg-grid opacity-20" />
 
@@ -125,40 +125,39 @@ export default function SaintChaumondPage() {
           <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#1a5fb4]/30 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-pickletrack-gold/20 rounded-full blur-[120px]" />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 lg:px-8 pt-12 md:pt-16 pb-20 md:pb-32">
+          <div className="relative z-10 max-w-7xl md:max-w-[92%] lg:max-w-7xl mx-auto px-6 md:px-6 lg:px-8 py-8 md:py-12">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Text content */}
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-4 md:space-y-5">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 bg-pickletrack-gold/10 border border-pickletrack-gold/30 rounded-full backdrop-blur-sm">
-                  <span className="w-2 h-2 md:w-2.5 md:h-2.5 bg-pickletrack-gold rounded-full animate-pulse" />
-                  <span className="font-body text-sm md:text-base text-accent-gold uppercase tracking-wider font-semibold">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-pickletrack-gold/10 border border-pickletrack-gold/30 rounded-full backdrop-blur-sm">
+                  <span className="w-2 h-2 bg-pickletrack-gold rounded-full animate-pulse" />
+                  <span className="font-body text-sm text-accent-gold uppercase tracking-wider font-semibold">
                     Inscripciones Agosto 2026
                   </span>
                 </div>
 
-                <div className="space-y-2 md:space-y-3">
-                  <p className="font-body text-theme-muted text-lg md:text-xl tracking-wide">
-                    Colegio Union-Chrétienne de
-                  </p>
-                  <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85] uppercase">
-                    <span className="text-theme-primary">Saint</span>
+                <div className="space-y-1">
+                  <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] uppercase">
+                    <span className="text-accent-lime">Pickleball</span>
+                    <br />
+                    <span className="text-theme-primary">Colegio</span>
                     <br />
                     <span className="text-accent-gold relative">
-                      Chaumond
+                      Saint Chaumond
                       {/* Underline accent */}
-                      <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent-gold via-accent-lime to-accent-cyan rounded-full opacity-60" />
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-accent-gold via-accent-lime to-accent-cyan rounded-full opacity-60" />
                     </span>
                   </h1>
                 </div>
 
-                <p className="font-body text-xl md:text-2xl text-theme-secondary max-w-lg md:max-w-2xl leading-relaxed">
+                <p className="font-body text-lg md:text-xl text-theme-secondary max-w-lg md:max-w-2xl lg:max-w-xl leading-relaxed">
                   Escuela de <strong className="text-accent-lime font-bold">Pickleball</strong> y{' '}
                   <strong className="text-accent-magenta font-bold">MiniTenis</strong> en el corazón de Madrid.
                   3 pistas de última generación.
                 </p>
 
-                <div className="flex flex-wrap gap-4 pt-4 md:pt-6">
+                <div className="flex flex-wrap gap-3 pt-2">
                   <a
                     href="#inscripcion"
                     className="btn-primary inline-flex items-center gap-2"
@@ -174,18 +173,18 @@ export default function SaintChaumondPage() {
                 </div>
 
                 {/* Quick stats - styled card */}
-                <div className="hero-stats-card grid grid-cols-3 gap-6 md:gap-8 pt-6 md:pt-8 mt-4 md:mt-6 mb-8 md:mb-12">
+                <div className="hero-stats-card grid grid-cols-3 gap-4 md:gap-6 pt-4 mt-2">
                   <div className="text-center">
-                    <p className="font-display text-4xl md:text-5xl text-accent-lime mb-1 md:mb-2">3</p>
-                    <p className="font-body text-xs md:text-sm text-theme-muted uppercase tracking-wider font-medium">Pistas</p>
+                    <p className="font-display text-3xl md:text-4xl text-accent-lime mb-1">3</p>
+                    <p className="font-body text-xs text-theme-muted uppercase tracking-wider font-medium">Pistas</p>
                   </div>
                   <div className="text-center border-x border-theme-subtle">
-                    <p className="font-display text-4xl md:text-5xl text-accent-cyan mb-1 md:mb-2">2</p>
-                    <p className="font-body text-xs md:text-sm text-theme-muted uppercase tracking-wider font-medium">Programas</p>
+                    <p className="font-display text-3xl md:text-4xl text-accent-cyan mb-1">2</p>
+                    <p className="font-body text-xs text-theme-muted uppercase tracking-wider font-medium">Programas</p>
                   </div>
                   <div className="text-center">
-                    <p className="font-display text-4xl md:text-5xl text-accent-gold mb-1 md:mb-2">+40</p>
-                    <p className="font-body text-xs md:text-sm text-theme-muted uppercase tracking-wider font-medium">Profesionales</p>
+                    <p className="font-display text-3xl md:text-4xl text-accent-gold mb-1">+40</p>
+                    <p className="font-body text-xs text-theme-muted uppercase tracking-wider font-medium">Profesionales</p>
                   </div>
                 </div>
               </div>
@@ -197,37 +196,52 @@ export default function SaintChaumondPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1a5fb4]/20 via-pickletrack-gold/10 to-transparent rounded-3xl blur-2xl" />
 
                   {/* Main card */}
-                  <div className="hero-visual-card relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full flex flex-col items-center justify-center">
+                  <div className="hero-visual-card relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full flex flex-col items-center justify-center overflow-hidden">
+                    {/* Background image - Pickleball court */}
+                    <div className="absolute inset-0 z-0">
+                      <Image
+                        src="/courts/court-lime-removebg-preview.png"
+                        alt="Pista Pickleball"
+                        fill
+                        className="object-cover opacity-[0.15] scale-110"
+                        style={{ filter: 'brightness(0.5) saturate(1.2)' }}
+                      />
+                      {/* Dark overlay for better text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-pickletrack-black/80 via-pickletrack-black/70 to-pickletrack-black/80" />
+                      {/* Subtle gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-accent-lime/10 via-transparent to-accent-gold/10" />
+                    </div>
+
                     {/* Court lines decoration */}
-                    <div className="absolute inset-8 border-2 border-dashed border-accent-lime/20 rounded-xl" />
-                    <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-accent-lime/20" />
+                    <div className="absolute inset-8 border-2 border-dashed border-accent-lime/30 rounded-xl z-10" />
+                    <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-accent-lime/30 z-10" />
 
                     {/* PickleTrack logo */}
-                    <div className="relative w-48 h-16 mb-6 z-10">
+                    <div className="relative w-48 h-16 mb-6 z-20">
                       <Image
                         src="/brand/pickletrack.png"
                         alt="PickleTrack"
                         fill
-                        className="object-contain"
+                        className="object-contain drop-shadow-lg"
                       />
                     </div>
 
-                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent mb-6" />
+                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent mb-6 z-20" />
 
                     {/* School name */}
-                    <div className="text-center z-10">
-                      <p className="font-body text-theme-muted text-sm uppercase tracking-[0.2em] mb-2">
+                    <div className="text-center z-20 relative">
+                      <p className="font-body text-theme-muted text-sm uppercase tracking-[0.2em] mb-2 drop-shadow-md">
                         Union-Chrétienne de
                       </p>
-                      <h2 className="font-display text-4xl text-theme-primary uppercase tracking-wide">
+                      <h2 className="font-display text-4xl text-theme-primary uppercase tracking-wide drop-shadow-lg">
                         Saint Chaumond
                       </h2>
                     </div>
 
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-theme-muted/20 to-transparent my-6" />
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-theme-muted/30 to-transparent my-6 z-20" />
 
                     {/* Tagline */}
-                    <div className="flex items-center gap-4 text-theme-muted font-body text-sm uppercase tracking-widest">
+                    <div className="flex items-center gap-4 text-theme-muted font-body text-sm uppercase tracking-widest z-20 relative drop-shadow-md">
                       <span>Escuela</span>
                       <span className="w-1.5 h-1.5 bg-accent-gold rounded-full" />
                       <span>Equipos</span>
@@ -236,7 +250,7 @@ export default function SaintChaumondPage() {
                     </div>
 
                     {/* Floating badge */}
-                    <div className="absolute -top-4 -right-4 px-5 py-2.5 bg-gradient-to-r from-accent-lime to-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider rounded-lg shadow-lg transform rotate-3">
+                    <div className="absolute -top-4 -right-4 px-5 py-2.5 bg-gradient-to-r from-accent-lime to-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider rounded-lg shadow-xl transform rotate-3 z-30">
                       Nuevo 2026
                     </div>
                   </div>
@@ -246,9 +260,9 @@ export default function SaintChaumondPage() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-20">
             <span className="font-body text-xs uppercase tracking-widest text-theme-subtle">Descubre más</span>
-            <div className="w-px h-8 bg-gradient-to-b from-accent-gold to-transparent" />
+            <div className="w-px h-6 bg-gradient-to-b from-accent-gold to-transparent" />
           </div>
         </section>
 
