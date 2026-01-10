@@ -581,7 +581,7 @@ export default function Home() {
 
             {/* Card visual */}
             <div className="relative hidden lg:block">
-              <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+              <div className="school-info-card relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 {/* PickleTrack + School */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="relative w-32 h-10">
@@ -597,28 +597,42 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="text-center py-8 border-y border-white/10">
-                  <p className="font-body text-white/40 text-xs uppercase tracking-[0.2em] mb-2">
+                <div className="text-center py-8 border-y border-white/10 school-info-divider">
+                  <p className="font-body text-white/40 text-xs uppercase tracking-[0.2em] mb-2 school-info-subtitle">
                     Union-Chrétienne de
                   </p>
-                  <h3 className="font-display text-4xl text-white uppercase">
+                  <h3 className="font-display text-4xl text-white uppercase school-info-title">
                     Saint Chaumond
                   </h3>
-                  <p className="font-body text-white/50 text-sm mt-2">
+                  <p className="font-body text-white/50 text-sm mt-2 school-info-address">
                     C. de Rodríguez Marín, 30-32, Madrid
                   </p>
                 </div>
 
                 {/* Programs */}
                 <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="p-4 bg-pickletrack-lime/10 border border-pickletrack-lime/30 rounded-lg text-center">
-                    <span className="text-2xl mb-2 block">🏓</span>
+                  <div className="p-4 bg-pickletrack-lime/10 border border-pickletrack-lime/30 rounded-lg text-center school-program-card school-program-card-pickleball">
+                    <div className="relative w-8 h-8 mx-auto mb-2">
+                      <Image
+                        src="/brand/icons/pickleball.png"
+                        alt="Pickleball"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                     <p className="font-display text-sm text-pickletrack-lime uppercase">
                       Pickleball
                     </p>
                   </div>
-                  <div className="p-4 bg-pickletrack-magenta/10 border border-pickletrack-magenta/30 rounded-lg text-center">
-                    <span className="text-2xl mb-2 block">🎾</span>
+                  <div className="p-4 bg-pickletrack-magenta/10 border border-pickletrack-magenta/30 rounded-lg text-center school-program-card school-program-card-tennis">
+                    <div className="relative w-8 h-8 mx-auto mb-2">
+                      <Image
+                        src="/brand/icons/tennis.png"
+                        alt="MiniTenis"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                     <p className="font-display text-sm text-pickletrack-magenta uppercase">
                       MiniTenis
                     </p>

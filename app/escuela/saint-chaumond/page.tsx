@@ -95,14 +95,16 @@ export default function SaintChaumondPage() {
       edades: 'Desde 8 años',
       descripcion: 'El deporte de raqueta que más crece en el mundo. Fácil de aprender, difícil de dominar. Perfecto para todas las edades.',
       color: 'lime',
-      icon: '🏓',
+      icon: '/brand/icons/pickleball.png',
+      iconType: 'image',
     },
     {
       nombre: 'MiniTenis Bola Roja',
       edades: '4 a 7 años',
       descripcion: 'Iniciación al tenis con pelotas de baja presión. Las pistas de pickleball son ideales para este programa de iniciación.',
       color: 'magenta',
-      icon: '🎾',
+      icon: '/brand/icons/tennis.png',
+      iconType: 'image',
     },
   ]
 
@@ -191,25 +193,24 @@ export default function SaintChaumondPage() {
 
               {/* Visual - Dynamic sports illustration */}
               <div className="relative hidden lg:block">
-                <div className="relative aspect-square max-w-lg mx-auto">
+                <div className="relative aspect-square max-w-lg mx-auto overflow-visible">
                   {/* Background glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1a5fb4]/20 via-pickletrack-gold/10 to-transparent rounded-3xl blur-2xl" />
 
                   {/* Main card */}
                   <div className="hero-visual-card relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full flex flex-col items-center justify-center overflow-hidden">
-                    {/* Background image - Pickleball court */}
+                    {/* Background image - Pickleball courts */}
                     <div className="absolute inset-0 z-0">
                       <Image
-                        src="/courts/court-lime-removebg-preview.png"
-                        alt="Pista Pickleball"
+                        src="/courts/pistas.png"
+                        alt="Pistas Pickleball"
                         fill
-                        className="object-cover opacity-[0.15] scale-110"
-                        style={{ filter: 'brightness(0.5) saturate(1.2)' }}
+                        className="object-cover hero-card-bg-image"
                       />
-                      {/* Dark overlay for better text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-pickletrack-black/80 via-pickletrack-black/70 to-pickletrack-black/80" />
+                      {/* Dark overlay for better text readability - lighter to show image */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-pickletrack-black/50 via-pickletrack-black/40 to-pickletrack-black/50 hero-card-dark-overlay" />
                       {/* Subtle gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-accent-lime/10 via-transparent to-accent-gold/10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-accent-lime/25 via-transparent to-accent-gold/25 hero-card-gradient-overlay" />
                     </div>
 
                     {/* Court lines decoration */}
@@ -248,11 +249,11 @@ export default function SaintChaumondPage() {
                       <span className="w-1.5 h-1.5 bg-accent-gold rounded-full" />
                       <span>Instalación</span>
                     </div>
+                  </div>
 
-                    {/* Floating badge */}
-                    <div className="absolute -top-4 -right-4 px-5 py-2.5 bg-gradient-to-r from-accent-lime to-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider rounded-lg shadow-xl transform rotate-3 z-30">
-                      Nuevo 2026
-                    </div>
+                  {/* Floating badge - positioned outside overflow-hidden container */}
+                  <div className="absolute -top-4 -right-4 px-5 py-2.5 bg-gradient-to-r from-accent-lime to-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider rounded-lg shadow-2xl transform rotate-3 z-50 whitespace-nowrap">
+                    Nuevo 2026
                   </div>
                 </div>
               </div>
@@ -340,7 +341,19 @@ export default function SaintChaumondPage() {
                   key={programa.nombre}
                   className={`relative p-8 bg-theme-card border border-theme-subtle rounded-2xl hover:border-pickletrack-${programa.color}/60 transition-all duration-500 group`}
                 >
-                  <span className="text-6xl mb-6 block">{programa.icon}</span>
+                  {programa.iconType === 'image' ? (
+                    <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
+                      <Image
+                        src={programa.icon as string}
+                        alt={programa.nombre}
+                        width={80}
+                        height={80}
+                        className="object-contain filter drop-shadow-lg"
+                      />
+                    </div>
+                  ) : (
+                    <span className="text-6xl mb-6 block">{programa.icon}</span>
+                  )}
                   <h3 className={`font-display text-3xl ${programa.color === 'lime' ? 'text-accent-lime' : 'text-accent-magenta'} uppercase tracking-wide mb-2`}>
                     {programa.nombre}
                   </h3>

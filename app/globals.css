@@ -1416,3 +1416,93 @@ html.light .text-white strong {
   color: var(--light-text-primary) !important;
 }
 
+/* ========================================
+   LIGHT MODE HERO VISUAL CARD - Background Image Visibility
+   ======================================== */
+
+/* Make background image much more visible in light mode */
+html.light .hero-card-bg-image {
+  opacity: 1 !important;
+  filter: brightness(1.3) saturate(1.4) contrast(1.1) !important;
+}
+
+/* Make dark overlay almost transparent in light mode to show image */
+html.light .hero-card-dark-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.01) 50%,
+    rgba(0, 0, 0, 0.02) 100%
+  ) !important;
+}
+
+/* Reduce gradient overlay opacity in light mode to not hide image */
+html.light .hero-card-gradient-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(16, 185, 129, 0.15) 0%,
+    transparent 50%,
+    rgba(234, 179, 8, 0.15) 100%
+  ) !important;
+}
+
+/* Adjust hero visual card background in light mode for better contrast */
+html.light .hero-visual-card {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  ) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ========================================
+   LIGHT MODE SCHOOL INFO CARD - Visibility & Contrast
+   ======================================== */
+
+/* School info card - visible borders and background in light mode */
+html.light .school-info-card {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(250, 250, 250, 0.98) 100%
+  ) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* School info divider - visible border in light mode */
+html.light .school-info-divider {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* School info text colors in light mode */
+html.light .school-info-subtitle {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+html.light .school-info-title {
+  color: var(--light-text-primary) !important;
+}
+
+html.light .school-info-address {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* School program cards - better contrast in light mode */
+html.light .school-program-card {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .school-program-card-pickleball {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+html.light .school-program-card-tennis {
+  background: rgba(236, 72, 153, 0.1) !important;
+  border-color: rgba(236, 72, 153, 0.3) !important;
+}
+
