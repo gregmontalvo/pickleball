@@ -1417,13 +1417,29 @@ html.light .text-white strong {
 }
 
 /* ========================================
-   LIGHT MODE HERO VISUAL CARD - Background Image Visibility
+   HERO VISUAL CARD - Background Image Visibility
    ======================================== */
+
+/* Base styles for dark mode */
+.hero-card-bg-image {
+  opacity: 0.6;
+  filter: brightness(0.8) saturate(1.4) contrast(1.1);
+}
 
 /* Make background image much more visible in light mode */
 html.light .hero-card-bg-image {
   opacity: 1 !important;
   filter: brightness(1.3) saturate(1.4) contrast(1.1) !important;
+}
+
+/* Base dark overlay for dark mode */
+.hero-card-dark-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 /* Make dark overlay almost transparent in light mode to show image */
@@ -1434,6 +1450,16 @@ html.light .hero-card-dark-overlay {
     rgba(0, 0, 0, 0.01) 50%,
     rgba(0, 0, 0, 0.02) 100%
   ) !important;
+}
+
+/* Base gradient overlay for dark mode */
+.hero-card-gradient-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(16, 185, 129, 0.25) 0%,
+    transparent 50%,
+    rgba(234, 179, 8, 0.25) 100%
+  );
 }
 
 /* Reduce gradient overlay opacity in light mode to not hide image */
@@ -1504,5 +1530,98 @@ html.light .school-program-card-pickleball {
 html.light .school-program-card-tennis {
   background: rgba(236, 72, 153, 0.1) !important;
   border-color: rgba(236, 72, 153, 0.3) !important;
+}
+
+/* ========================================
+   BADGE CARDS - Background Images & Styling
+   ======================================== */
+
+/* Badge card styling - ensure background image is visible but not overwhelming */
+.badge-card {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3/4;
+}
+
+.badge-card .badge-bg-image {
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.badge-card:hover .badge-bg-image {
+  opacity: 0.95;
+  transform: scale(1.08);
+  filter: brightness(1.2) saturate(1.3);
+}
+
+/* Light mode badge cards */
+html.light .badge-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+html.light .badge-card .badge-bg-image {
+  opacity: 0.7;
+  filter: brightness(1.1) saturate(1.2);
+}
+
+html.light .badge-card:hover .badge-bg-image {
+  opacity: 0.85;
+  transform: scale(1.08);
+  filter: brightness(1.2) saturate(1.3);
+}
+
+/* Specific badge card colors in light mode - more vibrant */
+html.light .badge-card[class*="from-pickletrack-lime"] {
+  background: linear-gradient(
+    to bottom right,
+    rgba(16, 185, 129, 0.4) 0%,
+    rgba(16, 185, 129, 0.2) 100%
+  ) !important;
+  border-color: rgba(16, 185, 129, 0.6) !important;
+}
+
+html.light .badge-card[class*="from-pickletrack-cyan"] {
+  background: linear-gradient(
+    to bottom right,
+    rgba(6, 182, 212, 0.4) 0%,
+    rgba(6, 182, 212, 0.2) 100%
+  ) !important;
+  border-color: rgba(6, 182, 212, 0.6) !important;
+}
+
+html.light .badge-card[class*="from-pickletrack-magenta"] {
+  background: linear-gradient(
+    to bottom right,
+    rgba(236, 72, 153, 0.4) 0%,
+    rgba(236, 72, 153, 0.2) 100%
+  ) !important;
+  border-color: rgba(236, 72, 153, 0.6) !important;
+}
+
+/* ========================================
+   BADGIE CONTENT SECTION - Light Mode
+   ======================================== */
+
+/* Badgie features cards in light mode */
+html.light .bg-theme-card\/50 {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light .bg-accent-lime-subtle {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+html.light .text-theme-secondary {
+  color: var(--light-text-secondary) !important;
+}
+
+html.light .text-theme-muted {
+  color: var(--light-text-muted) !important;
 }
 

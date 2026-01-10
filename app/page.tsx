@@ -39,8 +39,8 @@ export default function Home() {
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pickletrack-cyan/15 rounded-full blur-[150px]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="relative z-10 w-full max-w-full sm:max-w-[98%] md:max-w-[96%] lg:max-w-[94%] xl:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 py-32">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
             {/* Text content */}
             <div className="space-y-8">
               <div className="space-y-4">
@@ -103,8 +103,8 @@ export default function Home() {
             </div>
 
             {/* Court visualization - 3 courts in perspective stack */}
-            <div className="relative hidden lg:flex items-start justify-center -mt-42">
-              <div className="relative animate-scale-in w-[500px] h-[520px] courts-container">
+            <div className="relative hidden md:flex items-start justify-center -mt-42">
+              <div className="relative animate-scale-in w-full max-w-[400px] md:max-w-[450px] lg:max-w-[500px] h-[420px] md:h-[480px] lg:h-[520px] courts-container">
                 {/* Background for light mode */}
                 <div className="absolute -inset-8 bg-gradient-to-br from-pickletrack-black/90 via-pickletrack-dark/80 to-pickletrack-black/90 rounded-3xl opacity-0 light-mode-bg -z-10" />
 
@@ -115,31 +115,31 @@ export default function Home() {
                   <Image
                     src="/courts/court-cyan-removebg-preview.png"
                     alt="Pista Pickleball Cyan"
-                    width={240}
-                    height={360}
-                    className="drop-shadow-[0_0_30px_rgba(0,255,255,0.4)]"
+                    width={200}
+                    height={300}
+                    className="w-[180px] md:w-[200px] lg:w-[240px] h-auto drop-shadow-[0_0_30px_rgba(0,255,255,0.4)]"
                   />
                 </div>
 
                 {/* Court 2 - Middle (Lime) */}
-                <div className="absolute top-20 left-28 transition-all duration-500 hover:translate-x-2 hover:-translate-y-2">
+                <div className="absolute top-12 md:top-16 lg:top-20 left-20 md:left-24 lg:left-28 transition-all duration-500 hover:translate-x-2 hover:-translate-y-2">
                   <Image
                     src="/courts/court-lime-removebg-preview.png"
                     alt="Pista Pickleball Lima"
-                    width={240}
-                    height={360}
-                    className="drop-shadow-[0_0_30px_rgba(204,255,0,0.4)]"
+                    width={200}
+                    height={300}
+                    className="w-[180px] md:w-[200px] lg:w-[240px] h-auto drop-shadow-[0_0_30px_rgba(204,255,0,0.4)]"
                   />
                 </div>
 
                 {/* Court 3 - Front (Magenta) */}
-                <div className="absolute top-40 left-56 transition-all duration-500 hover:translate-x-2 hover:-translate-y-2">
+                <div className="absolute top-24 md:top-32 lg:top-40 left-40 md:left-48 lg:left-56 transition-all duration-500 hover:translate-x-2 hover:-translate-y-2">
                   <Image
                     src="/courts/court-magenta-removebg-preview.png"
                     alt="Pista Pickleball Magenta"
-                    width={240}
-                    height={360}
-                    className="drop-shadow-[0_0_30px_rgba(255,0,255,0.4)]"
+                    width={200}
+                    height={300}
+                    className="w-[180px] md:w-[200px] lg:w-[240px] h-auto drop-shadow-[0_0_30px_rgba(255,0,255,0.4)]"
                   />
                 </div>
 
@@ -393,75 +393,34 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid opacity-20" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-body text-pickletrack-gold text-sm uppercase tracking-[0.3em] mb-4">
-                +30 Años de Experiencia
-              </p>
-              <h2 className="section-heading text-pickletrack-white mb-8">
-                Escuelas de <span className="gradient-text-gold">Elite</span>
-              </h2>
-              <div className="space-y-6 text-white/60 font-body text-lg leading-relaxed">
-                <p>
-                  Con más de 30 años gestionando las escuelas de Tenis y Pádel
-                  en el
-                  <strong className="text-pickletrack-gold">
-                    {" "}
-                    Club de Campo Villa de Madrid
-                  </strong>
-                  , nuestro equipo de más de 40 profesionales está preparado
-                  para brindar programas de entrenamiento de alta calidad.
+              <div>
+                <p className="font-body text-pickletrack-gold text-sm uppercase tracking-[0.3em] mb-4">
+                  +30 Años de Experiencia
                 </p>
-                <p>
-                  Las pistas de pickleball son ideales también para la
-                  <strong className="text-pickletrack-lime">
-                    {" "}
-                    iniciación al tenis con bola roja{" "}
-                  </strong>
-                  para niños de 4 a 7 años.
-                </p>
-              </div>
-
-              {/* Badges system preview */}
-              <div className="mt-10 p-8 bg-pickletrack-black/50 border border-white/10 rounded-xl">
-                <p className="font-display text-xl uppercase tracking-wider text-white mb-6">
-                  Sistema de Insignias Badgie
-                </p>
-                <div className="flex gap-4">
-                  {[
-                    {
-                      name: "Golpes Básicos",
-                      icon: "/brand/badges/badge-ball.png",
-                      color: "lime",
-                    },
-                    {
-                      name: "Jugador Social",
-                      icon: "/brand/badges/badge-chat.png",
-                      color: "cyan",
-                    },
-                    {
-                      name: "Pro Player",
-                      icon: "/brand/badges/badge-court.png",
-                      color: "magenta",
-                    },
-                  ].map((badge) => (
-                    <div
-                      key={badge.name}
-                      className={`flex-1 p-4 bg-gradient-to-br from-pickletrack-${badge.color}/20 to-transparent border border-pickletrack-${badge.color}/30 rounded-lg text-center`}
-                    >
-                      <div className="w-16 h-16 mx-auto mb-3 relative">
-                        <Image
-                          src={badge.icon}
-                          alt={badge.name}
-                          fill
-                          className="object-contain invert"
-                        />
-                      </div>
-                      <p className="font-body text-sm text-white/70">
-                        {badge.name}
-                      </p>
-                    </div>
-                  ))}
+                <h2 className="section-heading text-pickletrack-white mb-8">
+                  Escuelas de <span className="gradient-text-gold">Elite</span>
+                </h2>
+                <div className="space-y-6 text-white/60 font-body text-lg leading-relaxed">
+                  <p>
+                    Con más de 30 años gestionando las escuelas de Tenis y Pádel
+                    en el
+                    <strong className="text-pickletrack-gold">
+                      {" "}
+                      Club de Campo Villa de Madrid
+                    </strong>
+                    , nuestro equipo de más de 40 profesionales está preparado
+                    para brindar programas de entrenamiento de alta calidad.
+                  </p>
+                  <p>
+                    Las pistas de pickleball son ideales también para la
+                    <strong className="text-pickletrack-lime">
+                      {" "}
+                      iniciación al tenis con bola roja{" "}
+                    </strong>
+                    para niños de 4 a 7 años.
+                  </p>
                 </div>
               </div>
             </div>
@@ -494,6 +453,164 @@ export default function Home() {
                 <p className="font-display text-3xl">1994</p>
                 <p className="font-body text-xs uppercase tracking-wider">
                   Desde
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Badgie System Section */}
+      <section className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-black to-pickletrack-dark">
+        <div className="absolute inset-0 bg-grid opacity-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="p-8 bg-pickletrack-black/50 border border-white/10 rounded-xl">
+            <a
+              href="https://www.badgie.es/pickleball"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-6 group"
+            >
+              <p className="font-display text-xl uppercase tracking-wider text-white group-hover:text-accent-lime transition-colors">
+                Sistema de Insignias Badgie
+                <svg
+                  className="inline-block w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </p>
+            </a>
+            <div className="flex gap-4 mb-6">
+              {[
+                {
+                  name: "Golpes Básicos",
+                  image: "/brand/badges/badge-golpes-basicos.png",
+                  color: "lime",
+                },
+                {
+                  name: "Jugador Social",
+                  image: "/brand/badges/badge-jugador-social.png",
+                  color: "cyan",
+                },
+                {
+                  name: "Pro Player",
+                  image: "/brand/badges/badge-pro-player.png",
+                  color: "magenta",
+                },
+              ].map((badge) => (
+                <div
+                  key={badge.name}
+                  className={`badge-card relative flex-1 p-1 bg-gradient-to-br from-pickletrack-${badge.color}/40 to-pickletrack-${badge.color}/20 border-2 border-pickletrack-${badge.color}/60 rounded-lg overflow-hidden`}
+                >
+                  {/* Background badge image */}
+                  <div className="absolute inset-0 z-0 badge-bg-image">
+                    <Image
+                      src={badge.image}
+                      alt={badge.name}
+                      fill
+                      className="object-contain"
+                      style={{ padding: "2px" }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Badgie Features Description */}
+            <div className="space-y-4 text-theme-secondary">
+              <p className="font-body text-base leading-relaxed">
+                <strong className="text-accent-lime">Badgie</strong> es la
+                plataforma digital que revoluciona la gestión de escuelas
+                deportivas. Tus estudiantes pueden{" "}
+                <strong className="text-theme-primary">
+                  coleccionar insignias digitales
+                </strong>{" "}
+                por cada nueva habilidad adquirida, creando un sistema de
+                gamificación que fideliza y motiva como nunca antes.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                <div className="p-5 bg-theme-card/50 border border-theme-subtle rounded-lg">
+                  <h4 className="font-display text-lg font-semibold text-accent-cyan uppercase tracking-wide mb-3">
+                    📱 Apps Móviles
+                  </h4>
+                  <p className="font-body text-sm text-theme-muted leading-relaxed">
+                    Disponible en{" "}
+                    <strong className="text-theme-primary">App Store</strong> y{" "}
+                    <strong className="text-theme-primary">Google Play</strong>.
+                    Los estudiantes pueden ver sus insignias, progreso y
+                    comunicarse con profesores desde cualquier lugar.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-theme-card/50 border border-theme-subtle rounded-lg">
+                  <h4 className="font-display text-lg font-semibold text-accent-magenta uppercase tracking-wide mb-3">
+                    💬 Comunicación WhatsApp
+                  </h4>
+                  <p className="font-body text-sm text-theme-muted leading-relaxed">
+                    Comunícate con alumnos, padres y profesores directamente a
+                    través de{" "}
+                    <strong className="text-theme-primary">WhatsApp</strong>,
+                    automatizando notificaciones y manteniendo a todos
+                    informados.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-theme-card/50 border border-theme-subtle rounded-lg">
+                  <h4 className="font-display text-lg font-semibold text-accent-gold uppercase tracking-wide mb-3">
+                    📊 Informes Personalizados
+                  </h4>
+                  <p className="font-body text-sm text-theme-muted leading-relaxed">
+                    Genera{" "}
+                    <strong className="text-theme-primary">
+                      informes deportivos detallados
+                    </strong>{" "}
+                    personalizados para cada estudiante. Evalúa progreso,
+                    habilidades y entrega informes profesionales fácilmente.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-theme-card/50 border border-theme-subtle rounded-lg">
+                  <h4 className="font-display text-lg font-semibold text-accent-lime uppercase tracking-wide mb-3">
+                    ⚡ Evaluación Bidireccional
+                  </h4>
+                  <p className="font-body text-sm text-theme-muted leading-relaxed">
+                    Sistema de evaluación completo:{" "}
+                    <strong className="text-theme-primary">
+                      profesores evalúan alumnos
+                    </strong>
+                    ,
+                    <strong className="text-theme-primary">
+                      {" "}
+                      alumnos evalúan profesores
+                    </strong>{" "}
+                    y{" "}
+                    <strong className="text-theme-primary">
+                      familias evalúan la escuela
+                    </strong>
+                    . Mejora continua garantizada.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-accent-lime-subtle border border-pickletrack-lime/30 rounded-lg">
+                <p className="font-body text-sm leading-relaxed">
+                  <strong className="text-accent-lime">
+                    La viralidad de las insignias
+                  </strong>{" "}
+                  atrae nuevos alumnos a tu escuela, fideliza a los existentes y
+                  descubre nuevas formas de monetización para tu club o escuela.
+                  Badgie no solo organiza tu escuela,{" "}
+                  <strong className="text-theme-primary">la hace crecer</strong>
+                  .
                 </p>
               </div>
             </div>
