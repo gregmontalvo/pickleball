@@ -41,7 +41,7 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pickletrack-cyan/15 rounded-full blur-[150px]" />
 
         <div className="relative z-10 w-full max-w-full sm:max-w-[98%] md:max-w-[96%] lg:max-w-[94%] xl:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 py-32">
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
             {/* Text content */}
             <div className="space-y-8">
               <div className="space-y-4">
@@ -103,8 +103,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Court visualization - 3 courts in perspective stack */}
-            <div className="relative hidden md:flex items-start justify-center -mt-42">
+            {/* Court visualization - 3 courts in perspective stack - only on lg+ */}
+            <div className="relative hidden lg:flex items-start justify-center -mt-42">
               <div className="relative animate-scale-in w-full max-w-[400px] md:max-w-[450px] lg:max-w-[500px] h-[420px] md:h-[480px] lg:h-[520px] courts-container">
                 {/* Background for light mode */}
                 <div className="absolute -inset-8 bg-gradient-to-br from-pickletrack-black/90 via-pickletrack-dark/80 to-pickletrack-black/90 rounded-3xl opacity-0 light-mode-bg -z-10" />
@@ -157,20 +157,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mobile courts - simpler layout */}
-            <div className="relative flex lg:hidden items-center justify-center mt-8">
-              <div className="relative w-[200px] h-[320px]">
-                <Image
-                  src="/courts/court-lime-removebg-preview.png"
-                  alt="Pista Pickleball"
-                  fill
-                  className="object-contain drop-shadow-[0_0_30px_rgba(204,255,0,0.4)]"
-                />
-                <div className="absolute -top-2 -right-4 px-4 py-2 bg-pickletrack-gold text-pickletrack-black font-display text-xs uppercase tracking-wider animate-float shadow-xl z-10 rounded">
-                  Sin Coste
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
