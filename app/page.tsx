@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { PickleballCourt } from "@/components/landing/PickleballCourt";
+import { ContactForm } from "@/components/contact/ContactForm";
 import Image from "next/image";
 
 export default function Home() {
@@ -902,87 +903,7 @@ export default function Home() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-pickletrack-black/50 border border-white/10 p-8 lg:p-10">
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                      Nombre Institución
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
-                      placeholder="Colegio, Club, Hotel..."
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                      Tipo
-                    </label>
-                    <select className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors">
-                      <option value="">Selecciona...</option>
-                      <option value="colegio">Colegio</option>
-                      <option value="club">Club Deportivo</option>
-                      <option value="hotel">Hotel</option>
-                      <option value="asociacion">Asociación</option>
-                      <option value="otro">Otro</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                      Nombre Contacto
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
-                      placeholder="Tu nombre"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
-                      placeholder="email@ejemplo.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                    Teléfono
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
-                    placeholder="+34 600 000 000"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-body text-sm text-white/50 uppercase tracking-wider mb-2">
-                    Mensaje
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors resize-none"
-                    placeholder="Cuéntanos sobre tu espacio y qué necesitas..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-primary text-center"
-                >
-                  Enviar Solicitud
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>

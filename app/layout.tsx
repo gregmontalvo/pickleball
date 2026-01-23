@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'PickleTrack',
     images: [
       {
-        url: '/brand/pickletrack.png',
+        url: '/brand/logo-black.png',
         width: 1200,
         height: 630,
         alt: 'PickleTrack - Pistas de Pickleball',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PickleTrack | Pistas de Pickleball',
     description: 'Diseñamos, construimos y gestionamos instalaciones de Pickleball',
-    images: ['/brand/pickletrack.png'],
+    images: ['/brand/logo-black.png'],
   },
   icons: {
     icon: '/brand/icon.png',
