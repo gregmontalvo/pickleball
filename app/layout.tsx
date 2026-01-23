@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${bebasNeue.variable} ${dmSans.variable} dark`} suppressHydrationWarning>
+    <html lang="es" className={`${bebasNeue.variable} ${dmSans.variable} light`} suppressHydrationWarning>
       <body className="min-h-screen bg-pickletrack-black transition-colors duration-500" suppressHydrationWarning>
         <ThemeProvider>
           {children}

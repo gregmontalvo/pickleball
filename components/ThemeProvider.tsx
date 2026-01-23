@@ -15,13 +15,13 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 function getSystemTheme(): ResolvedTheme {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return 'light'
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('system')
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('dark')
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('light')
   const [mounted, setMounted] = useState(false)
 
   // Initial mount - read from localStorage or use system
@@ -37,9 +37,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         setResolvedTheme(savedTheme)
       }
     } else {
-      // No saved preference - use system
-      setThemeState('system')
-      setResolvedTheme(getSystemTheme())
+      // No saved preference - use light mode as default for new users
+      setThemeState('light')
+      setResolvedTheme('light')
     }
   }, [])
 
@@ -103,7 +103,7 @@ export function useTheme() {
     // Return default values during SSR
     return {
       theme: 'system' as Theme,
-      resolvedTheme: 'dark' as ResolvedTheme,
+      resolvedTheme: 'light' as ResolvedTheme,
       setTheme: () => {},
       toggleTheme: () => {}
     }
