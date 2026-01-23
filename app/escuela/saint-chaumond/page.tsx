@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
+import { EnrollmentForm } from '@/components/enrollment/EnrollmentForm'
+import { EventosSection } from '@/components/events/EventosSection'
 
 export const metadata: Metadata = {
   title: 'Escuela Pickleball Saint Chaumond Madrid | PickleTrack',
@@ -373,58 +375,7 @@ export default function SaintChaumondPage() {
         </section>
 
         {/* Eventos Promocionales */}
-        <section id="eventos" className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-dark to-pickletrack-black">
-          <div className="absolute inset-0 bg-grid opacity-20" />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <p className="font-body text-accent-cyan text-sm uppercase tracking-[0.3em] mb-4">
-                Primavera 2026
-              </p>
-              <h2 className="section-heading text-theme-primary">
-                Eventos <span className="gradient-text">Promocionales</span>
-              </h2>
-              <p className="font-body text-theme-muted text-lg mt-4 max-w-2xl mx-auto">
-                Antes del inicio de la escuela, ven a conocernos y probar el pickleball en nuestros eventos gratuitos.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {eventos.map((evento, index) => (
-                <div
-                  key={evento.titulo}
-                  className="relative group"
-                >
-                  {/* Card */}
-                  <div className="relative p-8 bg-theme-card border border-theme-subtle rounded-xl hover:border-pickletrack-lime/30 transition-all duration-500 h-full">
-                    {/* Date badge */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-lime-subtle border border-pickletrack-lime/30 rounded-full mb-6">
-                      <svg className="w-4 h-4 text-accent-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <span className="font-body text-sm text-accent-lime">{evento.fecha}</span>
-                    </div>
-
-                    <h3 className="font-display text-2xl text-theme-primary uppercase tracking-wide mb-3">
-                      {evento.titulo}
-                    </h3>
-                    <p className="font-body text-theme-secondary leading-relaxed">
-                      {evento.descripcion}
-                    </p>
-
-                    {/* Hover effect */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-pickletrack-lime via-pickletrack-cyan to-pickletrack-magenta scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-xl" />
-                  </div>
-
-                  {/* Number indicator */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-pickletrack-lime text-pickletrack-black font-display text-lg flex items-center justify-center rounded">
-                    {index + 1}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <EventosSection eventos={eventos} />
 
         {/* Horarios y Precios */}
         <section id="horarios" className="relative py-20 lg:py-24 bg-pickletrack-black">
@@ -607,28 +558,11 @@ export default function SaintChaumondPage() {
             </h2>
             <p className="font-body text-xl text-theme-secondary mb-10 max-w-2xl mx-auto">
               Las inscripciones para el curso 2026-2027 se abrirán en agosto.
-              Déjanos tu email y te avisamos cuando estén disponibles.
+              Déjanos tus datos y te avisamos cuando estén disponibles.
             </p>
 
-            {/* Email form */}
-            <form className="max-w-md mx-auto">
-              <div className="flex gap-3">
-                <input
-                  type="email"
-                  placeholder="tu@email.com"
-                  className="flex-1 px-5 py-4 bg-theme-card border border-theme-medium text-theme-primary font-body rounded-lg focus:border-pickletrack-lime focus:outline-none transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-4 bg-pickletrack-lime text-pickletrack-black font-display uppercase tracking-wider hover:glow-lime transition-all duration-300 rounded-lg"
-                >
-                  Avisarme
-                </button>
-              </div>
-              <p className="font-body text-theme-subtle text-sm mt-4">
-                Te notificaremos cuando abran las inscripciones. Sin spam.
-              </p>
-            </form>
+            {/* Enrollment form */}
+            <EnrollmentForm />
 
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-8 mt-16 pt-10 border-t border-theme-subtle">
@@ -672,12 +606,25 @@ export default function SaintChaumondPage() {
                 © 2026 PickleTrack. Escuela Saint Chaumond.
               </p>
 
-              <Link
-                href="/"
-                className="font-body text-sm text-theme-muted hover:text-accent-lime transition-colors"
-              >
-                ← Volver a PickleTrack
-              </Link>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="/"
+                  className="font-body text-sm text-theme-muted hover:text-accent-lime transition-colors"
+                >
+                  ← Volver a PickleTrack
+                </Link>
+                <a
+                  href="https://www.badgie.es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
+                  <span className="font-body text-sm text-theme-muted">
+                    Tecnología
+                  </span>
+                  <span className="font-display text-accent-gold">Badgie</span>
+                </a>
+              </div>
             </div>
           </div>
         </footer>

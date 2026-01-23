@@ -34,7 +34,7 @@ export function ThemeToggle() {
       title={`Modo actual: ${resolvedTheme === 'dark' ? 'oscuro' : 'claro'}`}
     >
       <div
-        className={`absolute top-1 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
+        className={`absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
           resolvedTheme === 'dark'
             ? 'left-1 bg-pickletrack-lime'
             : 'left-9 bg-pickletrack-gold'

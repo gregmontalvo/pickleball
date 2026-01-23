@@ -926,13 +926,13 @@ export default function Home() {
             </p>
 
             <a
-              href="https://www.badgiestudio.com"
+              href="https://www.badgie.es"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
               <span className="font-body text-sm text-white/40">
-                Powered by
+                Pickletrack usa tecnología
               </span>
               <span className="font-display text-pickletrack-gold">Badgie</span>
             </a>
