@@ -23,10 +23,10 @@ export async function POST(request: NextRequest) {
 
     const body: ContactFormData = await request.json();
 
-    // Validate required fields
-    if (!body.institutionName || !body.contactName || !body.email) {
+    // Only email and phone are required
+    if (!body.email || !body.phone) {
       return NextResponse.json(
-        { error: 'Faltan campos requeridos' },
+        { error: 'Email y teléfono son obligatorios' },
         { status: 400 }
       );
     }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Lead - PickleTrack</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #0f172a; color: #e2e8f0;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #0f172a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="max-width: 560px; width: 100%; border-collapse: collapse; background: linear-gradient(145deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%); border: 1px solid rgba(204, 255, 0, 0.2); border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+
+          <!-- Header -->
+          <tr>
+            <td style="padding: 32px 28px; background: linear-gradient(135deg, rgba(204, 255, 0, 0.15) 0%, rgba(0, 255, 255, 0.08) 50%, rgba(255, 0, 255, 0.08) 100%); text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
+              <h1 style="margin: 0; font-size: 26px; font-weight: 700; color: #ccff00; text-transform: uppercase; letter-spacing: 3px;">
+                Nuevo Lead
+              </h1>
+              <p style="margin: 8px 0 0; font-size: 14px; color: rgba(226, 232, 240, 0.8); letter-spacing: 1px;">
+                PickleTrack
+              </p>
+              <p style="margin: 12px 0 0; font-size: 13px; color: rgba(226, 232, 240, 0.5);">
+                {{ $json.day }}/{{ $json.month }}/{{ $json.year }} · {{ $json.receivedAt }}
+              </p>
+            </td>
+          </tr>
+
+          <!-- Institución -->
+          <tr>
+            <td style="padding: 24px 28px;">
+              <div style="margin-bottom: 20px; padding: 18px 20px; background: rgba(204, 255, 0, 0.06); border-left: 4px solid #ccff00; border-radius: 10px;">
+                <p style="margin: 0 0 6px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px;">Institución</p>
+                <p style="margin: 0; font-size: 18px; color: #f1f5f9; font-weight: 600;">{{ $json.institutionName }}</p>
+                <p style="margin: 6px 0 0; font-size: 14px; color: #94a3b8;">Tipo: <strong style="color: #ccff00;">{{ $json.institutionType }}</strong></p>
+              </div>
+
+              <!-- Contacto -->
+              <div style="margin-bottom: 20px; padding: 18px 20px; background: rgba(0, 255, 255, 0.06); border-left: 4px solid #22d3ee; border-radius: 10px;">
+                <p style="margin: 0 0 10px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px;">Contacto</p>
+                <p style="margin: 0 4px 0 0; font-size: 16px; color: #f1f5f9; font-weight: 600;">{{ $json.contactName }}</p>
+                <p style="margin: 8px 0 4px;"><a href="mailto:{{ $json.email }}" style="color: #22d3ee; text-decoration: none; font-weight: 500;">{{ $json.email }}</a></p>
+                <p style="margin: 4px 0 0;"><a href="tel:{{ $json.phone }}" style="color: #22d3ee; text-decoration: none; font-weight: 500;">{{ $json.phone }}</a></p>
+              </div>
+
+              <!-- Mensaje -->
+              <div style="margin-bottom: 8px; padding: 18px 20px; background: rgba(255, 0, 255, 0.06); border-left: 4px solid #d946ef; border-radius: 10px;">
+                <p style="margin: 0 0 10px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px;">Mensaje</p>
+                <p style="margin: 0; font-size: 15px; color: #e2e8f0; line-height: 1.6; white-space: pre-wrap;">{{ $json.message }}</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer Badgie -->
+          <tr>
+            <td style="padding: 24px 28px; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center;">
+              <p style="margin: 0 0 12px; font-size: 12px; color: #64748b;">
+                PickleTrack usa tecnología <a href="https://badgie.es" style="color: #ccff00; text-decoration: none; font-weight: 600;">Badgie</a> para su club
+              </p>
+              <a href="https://badgie.es" target="_blank" rel="noopener" style="display: inline-block;">
+                <img src="https://pickletrack.es/brand/logo-badgie.png" alt="Badgie" width="100" height="40" style="display: block; max-width: 100px; height: auto;" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

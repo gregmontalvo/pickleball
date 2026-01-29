@@ -82,7 +82,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="bg-pickletrack-black/50 border border-white/10 p-8 lg:p-10">
+    <div className="relative z-10 bg-pickletrack-black/50 border border-white/10 p-8 lg:p-10">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
@@ -98,7 +98,6 @@ export function ContactForm() {
               name="institutionName"
               value={formData.institutionName}
               onChange={handleChange}
-              required
               className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
               placeholder="Colegio, Club, Hotel..."
             />
@@ -115,7 +114,6 @@ export function ContactForm() {
               name="institutionType"
               value={formData.institutionType}
               onChange={handleChange}
-              required
               className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
             >
               <option value="">Selecciona...</option>
@@ -142,7 +140,6 @@ export function ContactForm() {
               name="contactName"
               value={formData.contactName}
               onChange={handleChange}
-              required
               className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
               placeholder="Tu nombre"
             />
@@ -180,6 +177,7 @@ export function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            required
             className="w-full px-4 py-3 bg-pickletrack-dark border border-white/10 text-white font-body focus:border-pickletrack-lime focus:outline-none transition-colors"
             placeholder="+34 600 000 000"
           />

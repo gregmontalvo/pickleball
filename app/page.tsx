@@ -821,8 +821,8 @@ export default function Home() {
         id="contacto"
         className="relative py-20 lg:py-24 bg-pickletrack-dark overflow-hidden"
       >
-        <div className="absolute inset-0 bg-grid opacity-30" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-pickletrack-lime/5 to-transparent" />
+        <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" aria-hidden />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-pickletrack-lime/5 to-transparent pointer-events-none" aria-hidden />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
