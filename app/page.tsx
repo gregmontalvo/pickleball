@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { PickleballCourt } from "@/components/landing/PickleballCourt";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { RotatingText } from "@/components/landing/RotatingText";
 import Image from "next/image";
 
 export default function Home() {
@@ -55,7 +56,9 @@ export default function Home() {
                   <br />
                   <span className="text-pickletrack-white/80">Para tu</span>
                   <br />
-                  <span className="text-pickletrack-gold">Colegio</span>
+                  <span className="text-pickletrack-gold">
+                    <RotatingText />
+                  </span>
                 </h1>
               </div>
 
