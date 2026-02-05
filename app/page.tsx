@@ -1,8 +1,9 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { PickleballCourt } from "@/components/landing/PickleballCourt";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { RotatingText } from "@/components/landing/RotatingText";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -931,33 +932,101 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-12 bg-pickletrack-black border-t border-white/10">
+      <footer className="relative py-16 bg-pickletrack-black border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="relative w-36 h-28">
-              <Image
-                src="/brand/pickletrack.png"
-                alt="PickleTrack"
-                fill
-                className="object-contain object-left invert-on-light"
-              />
+          {/* Top: Logo + Nav + Contact */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
+            {/* Brand */}
+            <div className="lg:col-span-1">
+              <Link href="/" className="relative block w-36 h-24 mb-4">
+                <Image
+                  src="/brand/pickletrack.png"
+                  alt="PickleTrack"
+                  fill
+                  className="object-contain object-left invert-on-light"
+                />
+              </Link>
+              <p className="font-body text-sm text-white/50 max-w-[200px]">
+                Diseño · Construcción · Gestión de pistas de Pickleball
+              </p>
             </div>
 
-            <p className="font-body text-sm text-white/40">
-              © 2025 PickleTrack. Diseño - Construcción - Gestión
-            </p>
+            {/* Navegación */}
+            <div>
+              <h3 className="font-display text-sm uppercase tracking-wider text-white/70 mb-4">
+                Navegación
+              </h3>
+              <nav className="flex flex-col gap-3">
+                <Link href="/#servicios" className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors">
+                  Servicios
+                </Link>
+                <Link href="/#disenos" className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors">
+                  Diseños
+                </Link>
+                <Link href="/#partners" className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors">
+                  Partners
+                </Link>
+                <Link href="/colegios" className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors">
+                  Colegios
+                </Link>
+                <Link href="/sobre-nosotros" className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors">
+                  Sobre Nosotros
+                </Link>
+                <Link href="/contacto" className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors">
+                  Contacto
+                </Link>
+              </nav>
+            </div>
 
-            <a
-              href="https://www.badgie.es"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-            >
-              <span className="font-body text-sm text-white/40">
-                Pickletrack usa tecnología
-              </span>
-              <span className="font-display text-pickletrack-gold">Badgie</span>
-            </a>
+            {/* Contacto rápido */}
+            <div>
+              <h3 className="font-display text-sm uppercase tracking-wider text-white/70 mb-4">
+                Contacto
+              </h3>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:admin@pickletrack.es"
+                  className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors"
+                >
+                  admin@pickletrack.es
+                </a>
+                <a
+                  href="tel:+34647432206"
+                  className="font-body text-sm text-white/50 hover:text-pickletrack-lime transition-colors"
+                >
+                  +34 647 432 206
+                </a>
+              </div>
+            </div>
+
+            {/* Tecnología */}
+            <div>
+              <h3 className="font-display text-sm uppercase tracking-wider text-white/70 mb-4">
+                Tecnología
+              </h3>
+              <a
+                href="https://www.badgie.es/pickleball"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body text-sm text-white/50 hover:text-pickletrack-gold transition-colors"
+              >
+                <span>Powered by</span>
+                <span className="font-display text-pickletrack-gold">Badgie</span>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom: Copyright */}
+          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-body text-sm text-white/40">
+              © {new Date().getFullYear()} PickleTrack. Todos los derechos reservados.
+            </p>
+            <p className="font-body text-xs text-white/30">
+              Diseño - Construcción - Gestión
+            </p>
           </div>
         </div>
       </footer>
