@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     canonical: 'https://pickletrack.es/escuela/saint-chaumond',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,  // Oculto - template para futuros colegios
+    follow: false,
   },
 }
 

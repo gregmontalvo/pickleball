@@ -608,68 +608,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Primera Escuela - Saint Chaumond */}
+      {/* Pickleball para Colegios - CTA */}
       <section className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-dark to-pickletrack-black overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-15" />
-        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[#1a5fb4]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-pickletrack-lime/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-pickletrack-gold/10 rounded-full blur-[120px]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-pickletrack-gold/10 border border-pickletrack-gold/30 rounded-full mb-6">
-                <span className="w-2 h-2 bg-pickletrack-gold rounded-full animate-pulse" />
-                <span className="font-body text-sm text-pickletrack-gold uppercase tracking-wider">
-                  Septiembre 2026
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-pickletrack-lime/10 border border-pickletrack-lime/30 rounded-full mb-6">
+                <span className="w-2 h-2 bg-pickletrack-lime rounded-full animate-pulse" />
+                <span className="font-body text-sm text-pickletrack-lime uppercase tracking-wider">
+                  Sin Inversión
                 </span>
               </div>
 
-              <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] mb-4">
-                Primera Escuela PickleTrack
+              <p className="font-body text-pickletrack-gold text-sm uppercase tracking-[0.3em] mb-4">
+                Para Instituciones
               </p>
               <h2 className="section-heading text-pickletrack-white mb-6">
-                Colegio{" "}
-                <span className="text-pickletrack-gold">Saint Chaumond</span>
+                Pickleball en{" "}
+                <span className="text-pickletrack-gold">tu Colegio</span>
               </h2>
               <p className="font-body text-lg text-white/60 mb-8 max-w-lg">
-                Nuestra primera escuela de Pickleball y MiniTenis en Madrid. 3
-                pistas profesionales, programas para todas las edades y eventos
-                promocionales durante la primavera.
+                Instalamos pistas profesionales en colegios, clubes y hoteles
+                sin que pongas un euro. Diseño, construcción y gestión de
+                escuelas deportivas incluido.
               </p>
 
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="font-display text-3xl text-pickletrack-lime">
-                    3
+                    0€
                   </p>
                   <p className="font-body text-xs text-white/50 uppercase">
-                    Pistas
+                    Inversión
                   </p>
                 </div>
                 <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="font-display text-3xl text-pickletrack-cyan">
-                    2
+                    +30
                   </p>
                   <p className="font-body text-xs text-white/50 uppercase">
-                    Programas
+                    Años Exp.
                   </p>
                 </div>
                 <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="font-display text-3xl text-pickletrack-magenta">
-                    4+
+                    +40
                   </p>
                   <p className="font-body text-xs text-white/50 uppercase">
-                    Eventos
+                    Profesionales
                   </p>
                 </div>
               </div>
 
               <a
-                href="/escuela/saint-chaumond"
+                href="/colegios"
                 className="inline-flex items-center gap-3 btn-primary"
               >
-                <span>Ver Escuela</span>
+                <span>Más Información</span>
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -689,7 +689,7 @@ export default function Home() {
             {/* Card visual */}
             <div className="relative hidden lg:block">
               <div className="school-info-card relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                {/* PickleTrack + School */}
+                {/* PickleTrack Logo */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="relative w-32 h-10">
                     <Image
@@ -699,24 +699,24 @@ export default function Home() {
                       className="object-contain object-left"
                     />
                   </div>
-                  <div className="px-3 py-1 bg-pickletrack-gold text-pickletrack-black font-display text-xs uppercase tracking-wider rounded">
-                    2026
+                  <div className="px-3 py-1 bg-pickletrack-lime text-pickletrack-black font-display text-xs uppercase tracking-wider rounded">
+                    B2B
                   </div>
                 </div>
 
                 <div className="text-center py-8 border-y border-white/10 school-info-divider">
                   <p className="font-body text-white/40 text-xs uppercase tracking-[0.2em] mb-2 school-info-subtitle">
-                    Union-Chrétienne de
+                    Llevamos Pickleball a tu
                   </p>
                   <h3 className="font-display text-4xl text-white uppercase school-info-title">
-                    Saint Chaumond
+                    Institución
                   </h3>
                   <p className="font-body text-white/50 text-sm mt-2 school-info-address">
-                    C. de Rodríguez Marín, 30-32, Madrid
+                    Colegios • Clubes • Hoteles • Asociaciones
                   </p>
                 </div>
 
-                {/* Programs */}
+                {/* Benefits */}
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="p-4 bg-pickletrack-lime/10 border border-pickletrack-lime/30 rounded-lg text-center school-program-card school-program-card-pickleball">
                     <div className="relative w-8 h-8 mx-auto mb-2">
@@ -728,27 +728,27 @@ export default function Home() {
                       />
                     </div>
                     <p className="font-display text-sm text-pickletrack-lime uppercase">
-                      Pickleball
+                      Instalación
                     </p>
                   </div>
-                  <div className="p-4 bg-pickletrack-magenta/10 border border-pickletrack-magenta/30 rounded-lg text-center school-program-card school-program-card-tennis">
+                  <div className="p-4 bg-pickletrack-gold/10 border border-pickletrack-gold/30 rounded-lg text-center school-program-card">
                     <div className="relative w-8 h-8 mx-auto mb-2">
                       <Image
-                        src="/brand/icons/tennis.png"
-                        alt="MiniTenis"
+                        src="/brand/icons/icon-chat-white.png"
+                        alt="Gestión"
                         fill
                         className="object-contain"
                       />
                     </div>
-                    <p className="font-display text-sm text-pickletrack-magenta uppercase">
-                      MiniTenis
+                    <p className="font-display text-sm text-pickletrack-gold uppercase">
+                      Gestión
                     </p>
                   </div>
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 px-4 py-2 bg-pickletrack-lime text-pickletrack-black font-display text-sm uppercase tracking-wider rounded shadow-lg animate-float">
-                  Inscripciones Agosto
+                <div className="absolute -top-4 -right-4 px-4 py-2 bg-pickletrack-gold text-pickletrack-black font-display text-sm uppercase tracking-wider rounded shadow-lg animate-float">
+                  Llave en Mano
                 </div>
               </div>
             </div>
@@ -759,8 +759,13 @@ export default function Home() {
       {/* Partners Section */}
       <section
         id="partners"
-        className="relative py-20 lg:py-24 bg-pickletrack-black"
+        className="relative py-20 lg:py-24 bg-gradient-to-b from-pickletrack-black via-pickletrack-dark to-pickletrack-black overflow-hidden"
       >
+        {/* Background effects */}
+        <div className="absolute inset-0 bg-grid opacity-10" />
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-pickletrack-lime/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-pickletrack-gold/5 rounded-full blur-[150px]" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-body text-pickletrack-lime text-sm uppercase tracking-[0.3em] mb-4">
@@ -771,51 +776,79 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-            {[
-              {
-                name: "Wilson",
-                desc: "Equipamiento oficial",
-                icon: "/brand/icons/icon-toggle-left-white.png",
-              },
-              {
-                name: "Tennis Point",
-                desc: "Retail deportivo",
-                icon: "/brand/icons/icon-toggle-right-white.png",
-              },
-              {
-                name: "Badgie",
-                desc: "Gestión digital",
-                icon: "/brand/icons/icon-square-white.png",
-              },
-              {
-                name: "RPPk",
-                desc: "Registro Profesional",
-                icon: "/brand/icons/icon-court-vertical-white.png",
-              },
-            ].map((partner, index) => (
-              <div
-                key={partner.name}
-                className="group p-8 bg-pickletrack-dark/30 border border-white/5 hover:border-pickletrack-lime/30 transition-all duration-500 text-center"
-              >
-                <div className="w-24 h-24 mx-auto mb-6 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-pickletrack-lime/10 transition-colors">
-                  <Image
-                    src={partner.icon}
-                    alt={partner.name}
-                    width={72}
-                    height={72}
-                    className="opacity-70 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-                <h3 className="font-display text-xl uppercase tracking-wider text-white mb-1">
-                  {partner.name}
-                </h3>
-                <p className="font-body text-sm text-white/40">
-                  {partner.desc}
-                </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+            {/* Wilson - Red brand color */}
+            <div className="group relative p-6 lg:p-8 bg-gradient-to-br from-red-600/10 to-red-900/5 border border-red-500/20 hover:border-red-500/50 rounded-2xl transition-all duration-500 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(239,68,68,0.2)]">
+              <div className="w-20 h-20 mx-auto mb-5 bg-gradient-to-br from-red-500/20 to-red-600/10 rounded-xl flex items-center justify-center group-hover:from-red-500/30 group-hover:to-red-600/20 transition-all">
+                <span className="font-display text-3xl text-red-500 group-hover:text-red-400 transition-colors">W</span>
               </div>
-            ))}
+              <h3 className="font-display text-2xl uppercase tracking-wider text-red-500 group-hover:text-red-400 mb-2 transition-colors">
+                Wilson
+              </h3>
+              <p className="font-body text-sm text-white/50 group-hover:text-white/70 transition-colors">
+                Equipamiento oficial
+              </p>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+
+            {/* Tennis Point - Blue brand color */}
+            <div className="group relative p-6 lg:p-8 bg-gradient-to-br from-blue-600/10 to-blue-900/5 border border-blue-500/20 hover:border-blue-500/50 rounded-2xl transition-all duration-500 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]">
+              <div className="w-20 h-20 mx-auto mb-5 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-blue-600/20 transition-all">
+                <span className="font-display text-3xl text-blue-500 group-hover:text-blue-400 transition-colors">TP</span>
+              </div>
+              <h3 className="font-display text-2xl uppercase tracking-wider text-blue-500 group-hover:text-blue-400 mb-2 transition-colors">
+                Tennis Point
+              </h3>
+              <p className="font-body text-sm text-white/50 group-hover:text-white/70 transition-colors">
+                Retail deportivo
+              </p>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+
+            {/* Badgie - Gold/Orange brand color */}
+            <a
+              href="https://www.badgie.es/pickleball"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-6 lg:p-8 bg-gradient-to-br from-amber-500/10 to-orange-900/5 border border-amber-500/20 hover:border-amber-500/50 rounded-2xl transition-all duration-500 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.2)] block"
+            >
+              <div className="w-20 h-20 mx-auto mb-5 bg-gradient-to-br from-amber-500/20 to-orange-600/10 rounded-xl flex items-center justify-center group-hover:from-amber-500/30 group-hover:to-orange-600/20 transition-all">
+                <Image
+                  src="/brand/logo-badgie.png"
+                  alt="Badgie"
+                  width={48}
+                  height={48}
+                  className="opacity-90 group-hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <h3 className="font-display text-2xl uppercase tracking-wider text-amber-500 group-hover:text-amber-400 mb-2 transition-colors">
+                Badgie
+              </h3>
+              <p className="font-body text-sm text-white/50 group-hover:text-white/70 transition-colors">
+                Gestión digital
+              </p>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            </a>
+
+            {/* RPPk - Green brand color */}
+            <div className="group relative p-6 lg:p-8 bg-gradient-to-br from-emerald-600/10 to-emerald-900/5 border border-emerald-500/20 hover:border-emerald-500/50 rounded-2xl transition-all duration-500 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(16,185,129,0.2)]">
+              <div className="w-20 h-20 mx-auto mb-5 bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 rounded-xl flex items-center justify-center group-hover:from-emerald-500/30 group-hover:to-emerald-600/20 transition-all">
+                <span className="font-display text-2xl text-emerald-500 group-hover:text-emerald-400 transition-colors">RPPk</span>
+              </div>
+              <h3 className="font-display text-2xl uppercase tracking-wider text-emerald-500 group-hover:text-emerald-400 mb-2 transition-colors">
+                RPPk
+              </h3>
+              <p className="font-body text-sm text-white/50 group-hover:text-white/70 transition-colors">
+                Registro Profesional
+              </p>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
           </div>
+
+          {/* Partners tagline */}
+          <p className="text-center font-body text-white/40 mt-12 max-w-2xl mx-auto">
+            Trabajamos con los mejores del sector para ofrecerte una experiencia deportiva de primer nivel.
+          </p>
         </div>
       </section>
 

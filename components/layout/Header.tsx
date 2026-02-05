@@ -99,7 +99,7 @@ export function Header() {
   const navLinks: NavLink[] = [
     { href: getNavLink("#servicios"), label: "Servicios", hash: "#servicios" },
     { href: getNavLink("#disenos"), label: "Diseños", hash: "#disenos" },
-    { href: "/escuela/saint-chaumond", label: "Escuela", isNew: true },
+    { href: "/colegios", label: "Colegios", isNew: true },
     { href: getNavLink("#partners"), label: "Partners", hash: "#partners" },
     { href: getNavLink("#contacto"), label: "Contacto", hash: "#contacto" },
   ];

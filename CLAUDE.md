@@ -289,18 +289,25 @@ NEXT_PUBLIC_SITE_URL=https://pickletrack.es
 
 ---
 
-## Primer Venue: St. Chaumond
+## Paginas de Escuelas
 
-- **Slug**: `stchaumond`
-- **Nombre**: Colegio Union-Chretienne de Saint Chaumond
-- **Direccion**: Calle Comandante Franco, Madrid
-- **Pistas**: 3 (pickleball)
-- **Lanzamiento**: Marzo 2026
+### Landing B2B: `/colegios`
+Pagina publica para captar instituciones interesadas en instalar pistas.
+- **URL**: `https://pickletrack.es/colegios`
+- **Proposito**: Captar colegios, clubes, hoteles, asociaciones
+- **Formulario**: `InstitutionContactForm` (B2B)
+- **SEO**: Optimizada para "pistas pickleball colegios"
 
-### Eventos promocionales 2026:
-- 19-26 Abril: Puertas abiertas
-- 24 Mayo: Torneo Padres/Madres/hijas
-- 6-7 Junio: Torneo escolar
+### Template de Escuela: `/escuela/saint-chaumond`
+Pagina oculta (noindex) que sirve como template para futuros colegios.
+- **Estado**: Oculta de buscadores, no enlazada
+- **Uso**: Clonar cuando llegue un nuevo partnership
+- **Para clonar**: Copiar `app/escuela/saint-chaumond/` a `app/escuela/[nuevo-colegio]/`
+
+### Componentes de Escuela
+- `EnrollmentForm` - Formulario de inscripcion de alumnos (B2C)
+- `EventosSection` - Seccion de eventos promocionales
+- `InstitutionContactForm` - Formulario de contacto institucional (B2B)
 
 ---
 
